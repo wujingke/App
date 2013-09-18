@@ -16,7 +16,7 @@
             <li><a href="">{{ Auth::user()->username }}</a></li>
             <li><a href="">{{ Lang::get('page.logout') }}</a></li>
           @else
-            <li><a href="">{{ Lang::get('page.login') }}</a></li>
+            <li class="login"><a href="">{{ Lang::get('page.login') }}</a></li>
             <li><a href="">{{ Lang::get('page.signup') }}</a></li>
           @endif
         </ul>

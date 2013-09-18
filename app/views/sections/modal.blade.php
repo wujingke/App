@@ -1,4 +1,4 @@
-<div class="modal active" id="modal1">
+<div class="modal" id="modal1">
   <div class="content">
     <a class="close switch" gumby-trigger="|#modal1"><i class="icon-cancel" /></i></a>
     <div class="row">
