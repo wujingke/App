@@ -116,7 +116,47 @@
 	-ms-border-radius: 7px;
 	-o-border-radius: 7px;
 	border-radius: 7px;
+}
+.login.modal > .content {
 	max-height: 50%;
 	min-height: 35%;
-	width: 40%;
+	width: 400px;
+	overflow: hidden;
+}
+.modal.active {
+	z-index: 1000;
+	-webkit-transition-property: opacity;
+	-moz-transition-property: opacity;
+	-o-transition-property: opacity;
+	transition-property: opacity;
+	-webkit-transition-duration: 0.12s;
+	-moz-transition-duration: 0.12s;
+	-o-transition-duration: 0.12s;
+	transition-duration: 0.12s;
+}
+.field .input {
+	line-height: 28px;
+}
+.btn-def {
+	display: inline-block;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	text-decoration: none;
+	line-height: 20px;
+	padding: 7px 17px;
+}
+.btn-def-orange {
+	color: #ffffff;
+	background-color: #eb8142;
+	border-color: #ea7138;
+}
+.btn-def-orange:hover {
+	background-color: #ea7138;
+	border-color: #da6128;
 }

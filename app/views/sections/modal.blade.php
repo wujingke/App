@@ -1,11 +1,23 @@
-<div class="modal" id="modal1">
+<div class="login modal">
   <div class="content">
-    <a class="close switch" gumby-trigger="|#modal1"><i class="icon-cancel" /></i></a>
-    <div class="row">
-      <div class="ten columns centered text-center">
-        <h2>This is a modal.</h2>
-        <p>Gumby modals are easy to make using Toggles &amp; Switches.</p>
-      </div>
-    </div>
+    <a class="close switch"><i class="icon-cancel"></i></a>
+    {{ Form::open(array('url'=>'/')) }}
+    	<p>{{ Lang::get('page.login') }}</p>
+    	<ul>
+    		<li class="field">
+    			{{ Form::text('email', '', array('class'=>'input')) }}
+    		</li>
+    		<li class="field">
+    			{{ Form::text('password', '', array('class'=>'input')) }}
+    		</li>
+    		<li>
+	    		<label class="inline">
+	    			{{ Form::checkbox('remember', true) }}
+	    			{{ Lang::get('page.remember_me') }}
+	    		</label>
+    			{{ Form::submit(Lang::get('page.login'), array('class'=>'btn-def btn-def-orange pull_right')) }}
+    		</li>
+    	</ul>
+    {{ Form::close() }}
   </div>
 </div>
