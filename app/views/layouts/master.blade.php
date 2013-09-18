@@ -20,7 +20,9 @@
     <div class="master">
       <div class="row">
         <div class="eight columns">
-          <div class="nice-box"></div>
+          <div class="nice-box">
+            @yield('app')
+          </div>
         </div>
         <div class="four columns">
           <div class="nice-box"></div>
@@ -28,7 +30,11 @@
         </div>
       </div>
     </div>
-    <div class="footer"></div>
+    <div class="footer">
+      <div class="row">
+        <p>&copy; 2013 Sofunny.pw · All rights reserved.</p>
+      </div>
+    </div>
   </div>
   {{ HTML::script('js/app.js') }}
 </body>

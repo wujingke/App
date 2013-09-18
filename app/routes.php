@@ -2,5 +2,5 @@
 
 Route::get('/', function()
 {
-	return View::make('layouts/master');
+	return View::make('topics.index');
 });
