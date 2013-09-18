@@ -107,3 +107,16 @@
 	font-size: 14px;
 	text-align: center;
 }
+.modal {
+	background: rgba(0, 0, 0, 0.58);
+}
+.modal > .content {
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	-ms-border-radius: 7px;
+	-o-border-radius: 7px;
+	border-radius: 7px;
+	max-height: 50%;
+	min-height: 35%;
+	width: 40%;
+}

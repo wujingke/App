@@ -12,8 +12,13 @@
     <div class="nav nav-bar top-fixed">
       <div class="row">
         <ul class="io columns tiles">
-          <li><a href="">{{ Lang::get('page.login') }}</a></li>
-          <li><a href="">{{ Lang::get('page.signup') }}</a></li>
+          @if(Auth::check())
+            <li><a href="">{{ Auth::user()->username }}</a></li>
+            <li><a href="">{{ Lang::get('page.logout') }}</a></li>
+          @else
+            <li><a href="">{{ Lang::get('page.login') }}</a></li>
+            <li><a href="">{{ Lang::get('page.signup') }}</a></li>
+          @endif
         </ul>
       </div>
     </div>
@@ -35,6 +40,7 @@
         <p>&copy; 2013 Sofunny.pw · All rights reserved.</p>
       </div>
     </div>
+    @include('sections.modal')
   </div>
   {{ HTML::script('js/app.js') }}
 </body>
