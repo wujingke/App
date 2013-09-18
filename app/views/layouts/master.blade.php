@@ -17,7 +17,17 @@
         </ul>
       </div>
     </div>
-    <div class="master"></div>
+    <div class="master">
+      <div class="row">
+        <div class="eight columns">
+          <div class="nice-box"></div>
+        </div>
+        <div class="four columns">
+          <div class="nice-box"></div>
+          <div class="nice-box"></div>
+        </div>
+      </div>
+    </div>
     <div class="footer"></div>
   </div>
   {{ HTML::script('js/app.js') }}
