@@ -17,3 +17,11 @@ Route::get('~master', array('as'=>'master', 'uses'=>'MasterController@index'));
 Route::post('~master/node/store', array('uses'=>'MasterController@nodeStore'));
 
 Route::get('settings', array('uses'=>'UserController@edit'));
+
+Route::get('~users', array('uses'=>'PageController@users'));
+
+Route::get('~sites', array('uses'=>'PageController@sites'));
+
+Route::get('about', array('uses'=>'PageController@about'));
+
+Route::get('wiki', array('uses'=>'PageController@wiki'));
