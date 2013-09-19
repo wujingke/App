@@ -1,17 +1,10 @@
 <?php
 
-Route::get('/', function()
-{
-	return View::make('topics.index')
-		->with('topics', Topic::all());
-});
+Route::get('/', array('uses'=>'TopicController@index'));
 
-Route::get('login', function() {
-	Auth::login(User::find(1));
-});
+Route::get('login', array('uses'=>'SessionController@create'));
 
-
-
+Route::get('signup', array('uses'=>'UserController@create'));
 
 Route::post('session/store', array('uses'=>'SessionController@store'));
 
@@ -22,3 +15,5 @@ Route::get('t/{id}', array('as'=>'topic', 'uses'=>'TopicController@show'));
 Route::get('~master', array('as'=>'master', 'uses'=>'MasterController@index'));
 
 Route::post('~master/node/store', array('uses'=>'MasterController@nodeStore'));
+
+Route::get('settings', array('uses'=>'UserController@edit'));

@@ -2,6 +2,11 @@
 
 class SessionController extends BaseController {
 
+	public function create()
+	{
+		return View::make('users.login');
+	}
+
 	public function store()
 	{
 		$user = array(

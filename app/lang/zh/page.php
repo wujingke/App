@@ -10,5 +10,6 @@ return array(
 	'email_or_username' => '邮箱或用户名',
 	'password'          => '密码',
 	'welcome_back'      => '欢迎回来',
+	'settings'          => '设置',
 
 );
