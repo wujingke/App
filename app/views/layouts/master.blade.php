@@ -6,6 +6,7 @@
   {{ HTML::style('css/gumby.css') }}
   {{ HTML::style('css/style.css') }}
   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  {{ HTML::script('js/jquery.placeholder.js') }}
 </head>
 <body>
   <div class="wrapper">
@@ -40,8 +41,10 @@
         <p>&copy; 2013 Sofunny.pw · All rights reserved.</p>
       </div>
     </div>
-    @include('sections.modal')
   </div>
+  @unless(Auth::check())
+    @include('sections.login')
+  @endunless
   {{ HTML::script('js/app.js') }}
 </body>
 </html>

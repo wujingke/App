@@ -18,5 +18,6 @@
 		$(".close").click(function() {
 			$(this).parents(".modal").removeClass("active");
 		});
+		$('input, textarea').placeholder();
 	});
 })();

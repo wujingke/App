@@ -118,10 +118,9 @@
 	border-radius: 7px;
 }
 .login.modal > .content {
-	max-height: 50%;
-	min-height: 35%;
+	max-height: 70%;
+	min-height: 30%;
 	width: 400px;
-	overflow: hidden;
 }
 .modal.active {
 	z-index: 1000;
@@ -136,6 +135,8 @@
 }
 .field .input {
 	line-height: 28px;
+	font-family: 'Ubuntu';
+	background-color: transparent;
 }
 .btn-def {
 	display: inline-block;
@@ -159,4 +160,16 @@
 .btn-def-orange:hover {
 	background-color: #ea7138;
 	border-color: #da6128;
+}
+.placeholder {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+p.welcome {
+	font-size: 20px;
+	line-height: 48px;
+}
+.third-part-login {
+	margin-top: 20px;
 }
