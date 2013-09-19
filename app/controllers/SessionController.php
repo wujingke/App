@@ -14,4 +14,12 @@ class SessionController extends BaseController {
 
 	}
 
+	public function destroy()
+	{
+		if (Auth::check()) {
+			Auth::logout();
+		}
+		return Redirect::to('/');
+	}
+
 }

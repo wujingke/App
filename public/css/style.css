@@ -90,6 +90,15 @@
 .topics > li {
 	border-bottom: 1px solid #ededed;
 	min-height: 70px;
+	padding: 8px 8px 8px 76px;
+	position: relative;
+}
+.topics > li span {
+	font-size: 14px;
+}
+.topics > li > a {
+	line-height: 32px;
+	font-size: 16px;
 }
 .footer {
 	margin-top: 12px;
@@ -172,4 +181,23 @@ p.welcome {
 }
 .third-part-login {
 	margin-top: 20px;
+}
+.avatar {
+	display: inline-block;
+	position: absolute;
+	left: 8px;
+	top: 8px;
+	width: 60px;
+	height: 60px;
+	overflow: hidden;
+	padding: 6px 6px;
+}
+.avatar > img {
+	width: 100%;
+	height: auto;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+	-ms-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+	-o-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+	box-shadow: 0 1px 2px rgba(0,0,0,0.15);
 }

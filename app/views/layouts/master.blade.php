@@ -14,11 +14,11 @@
       <div class="row">
         <ul class="io columns tiles">
           @if(Auth::check())
-            <li><a href="">{{ Auth::user()->username }}</a></li>
-            <li><a href="">{{ Lang::get('page.logout') }}</a></li>
+            <li><a href="/">{{ Auth::user()->username }}</a></li>
+            <li><a href="/logout">{{ Lang::get('page.logout') }}</a></li>
           @else
-            <li class="login"><a href="">{{ Lang::get('page.login') }}</a></li>
-            <li><a href="">{{ Lang::get('page.signup') }}</a></li>
+            <li><a href="/signup">{{ Lang::get('page.signup') }}</a></li>
+            <li class="login"><a href="/login">{{ Lang::get('page.login') }}</a></li>
           @endif
         </ul>
       </div>
