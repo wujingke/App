@@ -13,7 +13,7 @@
         <li>
           <label class="inline">
             {{ Form::checkbox('remember') }}
-            {{ Lang::get('page.remember_me') }}
+            <span>{{ Lang::get('page.remember_me') }}</span>
           </label>
           {{ Form::submit(Lang::get('page.login'), array('class'=>'btn-def btn-def-orange pull_right')) }}
         </li>
