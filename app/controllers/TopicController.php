@@ -5,6 +5,7 @@ class TopicController extends BaseController {
 	public function index()
 	{
 		return View::make('topics.index')
+			->with('nodes', Node::all())
 			->with('topics', Topic::paginate(3));
 	}
 

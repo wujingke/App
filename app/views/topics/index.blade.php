@@ -15,6 +15,10 @@
 @stop
 
 @section('sidebar')
-	<div class="nice-box"></div>
-	<div class="nice-box"></div>
+	<div class="nice-box">
+		@include('sections.node')
+	</div>
+	<div class="nice-box">
+		@include('sections.status')
+	</div>
 @stop
