@@ -246,3 +246,37 @@ p.welcome {
 	margin: 2px 12px;
 	cursor: pointer;
 }
+.logo:hover {
+	opacity: 0.94;
+}
+p.joinus {
+	font-size: 24px;
+	line-height: 48px;
+	padding: 20px 40px;
+}
+.topic-title {
+	border-bottom: 1px solid #ededed;
+	padding: 20px 40px;
+	font-size: 20px;
+	font-weight: bold;
+}
+.topic-content {
+	border-bottom: 1px solid #ededed;
+	padding: 20px 40px;
+	font-size: 16px;
+}
+.topic-data {
+	border-bottom: 1px solid #ededed;
+	padding: 12px 40px;
+	color: #888;
+}
+.topic-comments {
+	padding: 20px 40px;
+}
+.signup-form {
+	padding: 0 80px;
+}
+span.error {
+	color: #c03d20;
+	padding: 2px 4px;
+}
