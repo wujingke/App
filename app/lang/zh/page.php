@@ -11,5 +11,9 @@ return array(
 	'password'          => '密码',
 	'welcome_back'      => '欢迎回来',
 	'settings'          => '设置',
+	'latest'            => '最新',
+	'default'           => '默认',
+	'popular'           => '热门',
+	'topic'             => '话题',
 
 );
