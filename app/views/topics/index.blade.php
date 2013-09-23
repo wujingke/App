@@ -1,14 +1,6 @@
 @extends('layouts.master')
 
 @section('app')
-	<div class="nice-plus">
-		<p class="order">
-			<i class="icon-chat"></i>
-			<span><a href="">{{ Lang::get('page.latest') }}</a></span>
-			<span><a href="">{{ Lang::get('page.popular') }}</a></span>
-			<span class="active"><a href="">{{ Lang::get('page.default') }}</a></span>
-		</p>
-	</div>
 	<ul class="topics">
 		@foreach($topics as $topic)
 		<li>
@@ -19,10 +11,10 @@
 		</li>
 		@endforeach
 	</ul>
-	<div class="pagination">
-		
-	</div>
-	<div class="nice-minus">
-		<p>sdfsf</p>
-	</div>
+	{{ $topics->links() }}
+@stop
+
+@section('sidebar')
+	<div class="nice-box"></div>
+	<div class="nice-box"></div>
 @stop

@@ -72,38 +72,22 @@
 	min-height: 80px;
 	margin-bottom: 20px;
 }
-.nice-box > .nice-plus {
-
-}
-.nice-box > .nice-minus {
-
-}
-p.order {
-	padding: 4px 8px;
-	margin: 0;
-	color: #787878;
-}
-p.order a {
-	color: #707070;
-}
-p.order a:hover {
-	color: #d04526;
-}
-p.order > span {
-	float: right;
-	margin: 0 8px;
-	font-size: 14px;
-	line-height: 20px;
-}
-p.order > span.active > a {
-	font-weight: bold;
-	color: #d04526;
-}
 .topics {
-	border-top: 1px solid #ededed;
+
 }
 .pagination {
-	min-height: 50px;
+	text-align: center;
+}
+.pagination > ul {
+
+}
+.pagination > ul > li {
+	display: inline-block;
+
+}
+.pagination > ul > li > a, .pagination > ul > li > span {
+	display: block;
+	min-width: 32px;
 }
 .topics > li {
 	border-bottom: 1px solid #ededed;

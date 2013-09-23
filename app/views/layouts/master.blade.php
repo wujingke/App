@@ -32,8 +32,7 @@
           </div>
         </div>
         <div class="four columns">
-          <div class="nice-box"></div>
-          <div class="nice-box"></div>
+          @yield('sidebar')
         </div>
       </div>
     </div>
