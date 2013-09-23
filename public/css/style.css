@@ -238,3 +238,11 @@ p.welcome {
 .login form label.inline > span {
 	font-size: 14px;
 }
+.logo {
+	display: inline-block;
+	width: 48px;
+	height: 40px;
+	background: url(../img/logo.png);
+	margin: 2px 12px;
+	cursor: pointer;
+}

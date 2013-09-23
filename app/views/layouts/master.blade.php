@@ -12,6 +12,7 @@
   <div class="wrapper">
     <div class="nav nav-bar top-fixed">
       <div class="row">
+        <a href="" class="logo"></a>
         <ul class="io columns tiles">
           @if(Auth::check())
             <li><a href="{{ URL::to('/') }}">{{ Auth::user()->username }}</a></li>
