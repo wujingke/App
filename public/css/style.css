@@ -216,7 +216,7 @@ p.welcome {
 .third-part-login {
 	margin-top: 20px;
 }
-.avatar {
+.topics .avatar {
 	display: inline-block;
 	position: absolute;
 	left: 8px;
@@ -321,4 +321,12 @@ span.error {
 .site-data {
 	color: #eb8142;
 	font-weight: bold;
+}
+.users-roles > p {
+	font-weight: bold;
+	color: #eb8142;
+	font-family: 'Ubuntu';
+	background-color: #faf4f1;
+	text-align: center;
+	padding: 12px 0;
 }

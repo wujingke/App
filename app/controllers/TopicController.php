@@ -17,4 +17,9 @@ class TopicController extends BaseController {
 			->with('topic', $topic);
 	}
 
+	public function create()
+	{
+		return View::make('topics.create');
+	}
+
 }

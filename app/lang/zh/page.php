@@ -20,5 +20,8 @@ return array(
 	'profile'                      => '个人资料',
 	'change_password'              => '修改密码',
 	'node'                         => '节点',
+	'active_users'                 => '社区活跃用户',
+	'cofounder'                    => '社区创立者',
+	'member'                       => '社区相关成员',
 
 );

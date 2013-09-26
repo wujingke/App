@@ -36,3 +36,8 @@ Route::get('node/{pretty}', array('uses'=>'NodeController@index'));
 
 Route::get('notification', array('uses'=>'NotificationController@index'));
 
+Route::get('topic/create', array('uses'=>'TopicController@create'));
+
+Route::put('topic/{id}/update', array('uses'=>'TopicController@update'));
+
+Route::delete('topic/{id}', array('uses'=>'TopicController@destroy'));
