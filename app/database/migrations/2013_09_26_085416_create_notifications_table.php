@@ -2,23 +2,22 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTopicsTable extends Migration {
+class CreateNotificationsTable extends Migration {
 
 	public function up()
 	{
-		Schema::create('topics', function($table)
+		Schema::create('notifications', function($table)
 		{
 			$table->increments('id');
 			$table->integer('user_id');
-			$table->string('title');
-			$table->string('content');
+			$table->text('content');
 			$table->timestamps();
 		});
 	}
 
 	public function down()
 	{
-		Schema::drop('topics');
+		Schema::drop('notifications');
 	}
 
 }

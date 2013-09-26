@@ -8,16 +8,22 @@ class NodeTableSeeder extends Seeder {
 
 		$nodes = array(
             array(
-                'name' => 'Ruby on Rails',
-                'pretty'    => 'ruby-on-rails',
+                'name'       => 'Ruby on Rails',
+                'pretty'     => 'ruby-on-rails',
+                'created_at' => new DateTime,
+                'updated_at' => new DateTime,
             ),
             array(
-                'name' => 'Sinatra',
-                'pretty'    => 'sinatra-framework',
+                'name'       => 'Sinatra',
+                'pretty'     => 'sinatra-framework',
+                'created_at' => new DateTime,
+                'updated_at' => new DateTime,
             ),
             array(
-                'name' => 'nodejs',
-                'pretty'    => 'nodejs',
+                'name'       => 'nodejs',
+                'pretty'     => 'nodejs',
+                'created_at' => new DateTime,
+                'updated_at' => new DateTime,
             ),
 		);
 

@@ -9,6 +9,7 @@ class CreateProfilesTable extends Migration {
 		Schema::create('profiles', function($table)
 		{
 			$table->increments('id');
+			$table->integer('user_id');
 			$table->string('nickname');
 			$table->string('location');
 			$table->string('website');

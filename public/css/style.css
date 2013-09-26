@@ -315,3 +315,6 @@ span.error {
 .nice-tabs > li.active > a {
 	border-bottom: 3px solid #eb8142;
 }
+.profile-form {
+	padding: 40px 8%;
+}

@@ -7,13 +7,32 @@
 	<li class="active"><a href="{{ URL::to('settings/profile') }}">{{ Lang::get('page.profile') }}</a></li>
 </ul>
 
+<ul class="profile-form">
+
 {{ Form::open(array('url'=>'', 'method'=>'put')) }}
 
-	{{ Form::text('nickname', '', array('class'=>'')) }}
-
-
+	<li class="field">
+		{{ Form::text('nickname', '', array('class'=>'input')) }}
+	</li>
+	<li class="field">
+		{{ Form::text('nickname', '', array('class'=>'input')) }}
+	</li>
+	<li class="field">
+		{{ Form::text('nickname', '', array('class'=>'input')) }}
+	</li>
+	<li class="field">
+		{{ Form::text('nickname', '', array('class'=>'input')) }}
+	</li>
+	<li class="field">
+		{{ Form::text('nickname', '', array('class'=>'input')) }}
+	</li>
+	<li>
+		{{ Form::submit('submit', array('class'=>'')) }}
+	</li>
 
 {{ Form::close() }}
+
+</ul>
 
 @stop
 
