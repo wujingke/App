@@ -274,9 +274,44 @@ p.joinus {
 	padding: 20px 40px;
 }
 .signup-form {
-	padding: 0 80px;
+	padding: 40px 8%;
 }
 span.error {
-	color: #c03d20;
+	background-color: #c03d20;
+	color: #fff;
 	padding: 2px 4px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #fafafa;
+	font-size: 14px;
+}
+.nice-tabs {
+	min-height: 50px;
+	border-bottom: 3px solid #ededed;
+	padding: 0 20px;
+}
+.nice-tabs > li {
+	float: right;
+	display:  inline-block;
+}
+.nice-tabs > li > a {
+	display: block;
+	height: 50px;
+	line-height: 47px;
+	padding: 0 12px;
+	-webkit-transition: .32s all ease-in-out;
+	-moz-transition: .32s all ease-in-out;
+	-ms-transition: .32s all ease-in-out;
+	-o-transition: .32s all ease-in-out;
+	transition: .32s all ease-in-out;
+}
+.nice-tabs > li > a:hover {
+	color: #eb8142;
+	font-weight: bold;
+}
+.nice-tabs > li.active > a {
+	border-bottom: 3px solid #eb8142;
 }

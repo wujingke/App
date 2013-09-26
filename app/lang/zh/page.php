@@ -17,5 +17,7 @@ return array(
 	'topic'                        => '话题',
 	'welcome_to_join_us'           => '欢迎加入我们',
 	'i_agree_with_the_above_terms' => '我同意上面的条款',
+	'profile'                      => '个人资料',
+	'change_password'              => '修改密码',
 
 );
