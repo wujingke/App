@@ -16,7 +16,13 @@ Route::get('~master', array('as'=>'master', 'uses'=>'MasterController@index'));
 
 Route::post('~master/node/store', array('uses'=>'MasterController@nodeStore'));
 
-Route::get('settings', array('uses'=>'UserController@edit'));
+Route::get('settings', array('uses'=>'UserController@profileIndex'));
+
+Route::get('settings/profile', array('uses'=>'UserController@profileEdit'));
+
+Route::put('settings/profile', array('uses'=>'UserController@profileUpdate'));
+
+Route::put('settings/password', array('uses'=>'UserController@update'));
 
 Route::get('~users', array('uses'=>'PageController@users'));
 
