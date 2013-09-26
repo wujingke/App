@@ -28,6 +28,13 @@ class TopicTableSeeder extends Seeder {
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
             ),
+            array(
+                'user_id'    => 3,
+                'title'      => 'Matz@2.0 Topic Title',
+                'content'    => 'Matz@2.0 说这里是一个温暖的小社区',
+                'created_at' => new DateTime,
+                'updated_at' => new DateTime,
+            ),
 		);
 
 		DB::table('topics')->insert($topics);

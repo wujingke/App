@@ -318,3 +318,7 @@ span.error {
 .profile-form {
 	padding: 40px 8%;
 }
+.site-data {
+	color: #eb8142;
+	font-weight: bold;
+}
