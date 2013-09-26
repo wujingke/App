@@ -4,7 +4,8 @@ class NotificationController extends BaseController {
 
 	public function index()
 	{
-		return View::make('notifications.index');
+		return View::make('notifications.index')
+			->with('notifications', Notification::all());
 	}
 
 }

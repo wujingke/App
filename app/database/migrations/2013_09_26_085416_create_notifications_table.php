@@ -10,6 +10,7 @@ class CreateNotificationsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('user_id');
+			$table->boolean('unread')->default(true);
 			$table->text('content');
 			$table->timestamps();
 		});
