@@ -33,6 +33,7 @@ class TopicController extends BaseController {
 		}
 
 		$topic = new Topic;
+		$topic->user_id = Auth::user()->id;
 		$topic->node_id = Input::get('node_id');
 		$topic->title   = Input::get('title');
 		$topic->content = Input::get('content');
@@ -42,6 +43,13 @@ class TopicController extends BaseController {
 		}
 
 		return Redirect::to('t/' . ($topic->id + 2013));
+	}
+
+	public function edit($id)
+	{
+		return View::make('topics.edit')
+			->with('topic', Topic::find($id))
+			->with('nodes', Node::all());
 	}
 
 }
