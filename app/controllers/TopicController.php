@@ -19,7 +19,13 @@ class TopicController extends BaseController {
 
 	public function create()
 	{
-		return View::make('topics.create');
+		return View::make('topics.create')
+			->with('nodes', Node::all());
+	}
+
+	public function store()
+	{
+		var_dump(Input::all());
 	}
 
 }

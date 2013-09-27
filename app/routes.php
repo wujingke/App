@@ -41,3 +41,5 @@ Route::get('topic/create', array('uses'=>'TopicController@create'));
 Route::put('topic/{id}/update', array('uses'=>'TopicController@update'));
 
 Route::delete('topic/{id}', array('uses'=>'TopicController@destroy'));
+
+Route::post('topic/store', array('uses'=>'TopicController@store'));

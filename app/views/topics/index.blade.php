@@ -6,7 +6,7 @@
 		<li>
 			<a href="{{ URL::route('topic', $topic->id + 2013) }}">{{ $topic->title }}</a>
 			<a href="" class="pull_right"><i class="icon-reply"></i></a>
-			<div><span>2013-13-13</span></div>
+			<div><span class="timeago" date-time="{{ $topic->created_at }}"></span></div>
 			<div class="avatar"><img src="https://identicons.github.com/b9757ef68a28f8b5874f00c6805bee43.png"></div>
 		</li>
 		@endforeach
@@ -15,6 +15,11 @@
 @stop
 
 @section('sidebar')
+	<div class="nice-box">
+		<div class="text-center">
+			<a class="btn-nice btn-nice-green" href="{{ URL::to('topic/create') }}">{{ Lang::get('page.create_topic') }}</a>
+		</div>
+	</div>
 	<div class="nice-box">
 		@include('sections.node')
 	</div>

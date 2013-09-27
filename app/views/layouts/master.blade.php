@@ -5,8 +5,10 @@
   <title></title>
   {{ HTML::style('css/gumby.css') }}
   {{ HTML::style('css/style.css') }}
-  <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+  {{ HTML::script('js/jquery.js') }}
   {{ HTML::script('js/jquery.placeholder.js') }}
+  {{ HTML::script('js/timeago.js') }}
+  {{ HTML::script('js/timeago.lang.zh.js') }}
 </head>
 <body>
   <div class="wrapper">

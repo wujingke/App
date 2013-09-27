@@ -23,5 +23,8 @@ return array(
 	'active_users'                 => '社区活跃用户',
 	'cofounder'                    => '社区创立者',
 	'member'                       => '社区相关成员',
+	'title'                        => '标题',
+	'content'                      => '内容',
+	'create_topic'                 => '发表话题',
 
 );
