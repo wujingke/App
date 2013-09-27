@@ -27,5 +27,8 @@
 			$("#nodeId").attr("value", nodeId);
 		});
 		$(".timeago").timeago();
+		$('#insert-picture').click(function() {
+			
+		});
 	});
 })();

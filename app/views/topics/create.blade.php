@@ -4,24 +4,27 @@
 
 	<ul class="select-nodes">
 		@foreach($nodes as $node)
-			<li><a data-node-id="{{ $node->id }}" href="{{ URL::to('node/' . $node->pretty) }}">{{ $node->name }}</a></li>
+			<li class="{{ (Input::old('node_id') == $node->id) ? 'active' : 'nil' }}"><a data-node-id="{{ $node->id }}" href="{{ URL::to('node/' . $node->pretty) }}">{{ $node->name }}</a></li>
 		@endforeach
+			<li>{{ $errors->first('node_id', '<span class="nice-message">:message</span>') }}</li>
 	</ul>
 	<ul class="topic-form">
 		{{ Form::open(array('url'=>'topic/store')) }}
-			{{ Form::hidden('node_id', '', array('id'=>'nodeId')) }}
+			{{ Form::hidden('node_id', Input::old('node_id'), array('id'=>'nodeId')) }}
 			<li class="field">
-				{{ Form::label('title', Lang::get('page.title')) }}
-				{{ Form::text('title', '', array('class'=>'input')) }}
+				{{ Form::label('title', Lang::get('page.title'), array('class'=>'inline')) }}
+				{{ $errors->first('title', '<span class="nice-message">:message</span>') }}
+				{{ Form::text('title', Input::old('title'), array('class'=>'input')) }}
 			</li>
 			<li class="field">
-				<span class="pull_right"><i class="icon-link"></i></span>
-				<span class="pull_right"><i class="icon-picture"></i></span>
+				<span id="insert-picture" class="pull_right"><i class="icon-picture"></i></span>
+				<span id="insert-link" class="pull_right"><i class="icon-link"></i></span>
 				{{ Form::label('content', Lang::get('page.content'), array('class'=>'inline')) }}
-				{{ Form::textarea('content', '', array('class'=>'textarea input', 'rows'=>'16')) }}
+				{{ $errors->first('content', '<span class="nice-message">:message</span>') }}
+				{{ Form::textarea('content', Input::old('content'), array('class'=>'textarea input', 'rows'=>'16')) }}
 			</li>
 			<li>
-				{{ Form::submit('submit', array('class'=>'btn-def btn-def-orange')) }}
+				{{ Form::submit(Lang::get('page.submit'), array('class'=>'btn-def btn-def-orange')) }}
 			</li>
 		{{ Form::close() }}
 	</ul>

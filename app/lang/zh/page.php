@@ -29,5 +29,6 @@ return array(
 	'discuss'                      => '讨论',
 	'slash'                        => '／',
 	'read'                         => '阅读',
+	'submit'                       => '提交',
 
 );

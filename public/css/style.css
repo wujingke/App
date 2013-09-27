@@ -407,3 +407,24 @@ span.error {
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
+.nice-message {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	background-color: #fff4f4;
+	border: 1px solid #d58a8a;
+	font-size: 14px;
+	color: #d58a8a;
+	display: inline-block;
+	padding: 0 12px 2px 12px;
+}
+#insert-picture, #insert-link {
+	cursor: pointer;
+	padding: 0 8px;
+	opacity: 0.5;
+}
+#insert-picture:hover, #insert-link:hover {
+	opacity: 1;
+}
