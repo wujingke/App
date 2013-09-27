@@ -6,7 +6,11 @@
 		<li>
 			<a href="{{ URL::route('topic', $topic->id + 2013) }}">{{ $topic->title }}</a>
 			<a href="" class="pull_right"><i class="icon-reply"></i></a>
-			<div><span class="timeago" date-time="{{ $topic->created_at }}"></span></div>
+			<div class="topic-meta">
+				<a href="">{{ Lang::get('page.discuss') }}(19)</a>
+				<span>{{ Lang::get('page.slash') }}101</span>
+				<span class="timeago" date-time="{{ $topic->created_at }}"></span>
+			</div>
 			<div class="avatar"><img src="https://identicons.github.com/b9757ef68a28f8b5874f00c6805bee43.png"></div>
 		</li>
 		@endforeach

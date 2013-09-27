@@ -26,5 +26,7 @@ return array(
 	'title'                        => '标题',
 	'content'                      => '内容',
 	'create_topic'                 => '发表话题',
+	'discuss'                      => '讨论',
+	'slash'                        => '／',
 
 );
