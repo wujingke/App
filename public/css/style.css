@@ -408,17 +408,8 @@ span.error {
 	margin-bottom: 20px;
 }
 .nice-message {
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	-ms-border-radius: 3px;
-	-o-border-radius: 3px;
-	border-radius: 3px;
-	background-color: #fff4f4;
-	border: 1px solid #d58a8a;
+	color: #eb8142;
 	font-size: 14px;
-	color: #d58a8a;
-	display: inline-block;
-	padding: 0 12px 2px 12px;
 }
 #insert-picture, #insert-link {
 	cursor: pointer;
@@ -427,4 +418,18 @@ span.error {
 }
 #insert-picture:hover, #insert-link:hover {
 	opacity: 1;
+}
+.topic-form li > label.inline {
+	padding-right: 0;
+}
+.nice-notice {
+	min-height: 20px;
+}
+.nice-notice > p {
+	font-weight: bold;
+	color: #eb8142;
+	font-family: 'Ubuntu';
+	background-color: #faf4f1;
+	text-align: center;
+	padding: 12px 0;
 }

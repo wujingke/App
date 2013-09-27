@@ -47,9 +47,52 @@ class TopicController extends BaseController {
 
 	public function edit($id)
 	{
+		$topic = Topic::find($id);
+
+		if (!$this->can($topic)) {
+			return '503';
+		}
 		return View::make('topics.edit')
-			->with('topic', Topic::find($id))
+			->with('topic', $topic)
 			->with('nodes', Node::all());
+	}
+
+	public function update($id)
+	{
+		$topic = Topic::find($id);
+		
+		if ($this->can($topic)) {
+
+			$v = Topic::validate(array(
+				'node_id' => $topic->node_id,
+				'title'   => Input::get('title'),
+				'content' => Input::get('content')
+			));
+
+			if ($v->fails()) {
+				return Redirect::back()
+					->withErrors($v)
+					->withInput();
+			}
+
+			$topic->title   = Input::get('title');
+			$topic->content = Input::get('content');
+			$topic->save();
+		}
+		return Redirect::back()
+			->with('message', Lang::get('page.update_successfully'));
+	}
+
+	public function destroy($id)
+	{
+		if ($this->can(Topic::find(id))) {
+			
+		}
+	}
+
+	private function can($topic)
+	{
+		return ($topic && ($topic->user->id == Auth::user()->id)) ? true : false;
 	}
 
 }

@@ -30,5 +30,6 @@ return array(
 	'slash'                        => '／',
 	'read'                         => '阅读',
 	'submit'                       => '提交',
+	'update_successfully'          => '更新成功',
 
 );

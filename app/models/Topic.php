@@ -12,4 +12,9 @@ class Topic extends BaseModel {
 	{
 		return $this->belongsTo('Node');
 	}
+
+	public function user()
+	{
+		return $this->belongsTo('User');
+	}
 }
