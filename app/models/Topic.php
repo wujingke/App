@@ -17,4 +17,9 @@ class Topic extends BaseModel {
 	{
 		return $this->belongsTo('User');
 	}
+
+	public function replies()
+	{
+		return $this->hasMany('Reply');
+	}
 }
