@@ -9,8 +9,6 @@
 			<div class="topic-meta">
 				<a href="{{ URL::route('topic', $topic->id + 2013) }}">{{ Lang::get('page.discuss') }}(19)</a>
 				<span>{{ Lang::get('page.slash') }}</span>
-				<a href="{{ URL::to('node/' . $topic->node->pretty) }}">{{ $topic->node->name }}</a>
-				<span>{{ Lang::get('page.slash') }}</span>
 				<span class="timeago" date-time="{{ $topic->created_at }}"></span>
 			</div>
 			<div class="avatar"><img src="https://identicons.github.com/b9757ef68a28f8b5874f00c6805bee43.png"></div>

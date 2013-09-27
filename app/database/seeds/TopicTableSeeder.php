@@ -9,6 +9,7 @@ class TopicTableSeeder extends Seeder {
 		$topics = array(
             array(
                 'user_id'    => 1,
+                'node_id'    => 2,
                 'title'      => 'Suzy Topic Title',
                 'content'    => 'Suzy 说这里是一个温暖的小社区',
                 'created_at' => new DateTime,
@@ -16,6 +17,7 @@ class TopicTableSeeder extends Seeder {
             ),
             array(
                 'user_id'    => 2,
+                'node_id'    => 1,
                 'title'      => 'Busker Topic Title',
                 'content'    => 'Busker 说这里是一个温暖的小社区',
                 'created_at' => new DateTime,
@@ -23,6 +25,7 @@ class TopicTableSeeder extends Seeder {
             ),
             array(
                 'user_id'    => 3,
+                'node_id'    => 1,
                 'title'      => 'Matz Topic Title',
                 'content'    => 'Matz 说这里是一个温暖的小社区',
                 'created_at' => new DateTime,
@@ -30,6 +33,7 @@ class TopicTableSeeder extends Seeder {
             ),
             array(
                 'user_id'    => 3,
+                'node_id'    => 1,
                 'title'      => 'Matz@2.0 Topic Title',
                 'content'    => 'Matz@2.0 说这里是一个温暖的小社区',
                 'created_at' => new DateTime,

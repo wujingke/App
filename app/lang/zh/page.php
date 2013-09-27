@@ -28,5 +28,6 @@ return array(
 	'create_topic'                 => '发表话题',
 	'discuss'                      => '讨论',
 	'slash'                        => '／',
+	'read'                         => '阅读',
 
 );
