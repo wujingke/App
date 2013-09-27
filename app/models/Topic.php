@@ -1,7 +1,13 @@
 <?php
 
-class Topic extends Eloquent {
-	
+class Topic extends BaseModel {
+
+	public static $rules = array(
+		'node_id' => 'required|exists:nodes,id',
+		'title'   => 'required|min:2|max:38',
+		'content' => 'required|min:5',
+	);
+
 	public function node()
 	{
 		return $this->belongsTo('Node');

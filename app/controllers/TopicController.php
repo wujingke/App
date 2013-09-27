@@ -25,7 +25,23 @@ class TopicController extends BaseController {
 
 	public function store()
 	{
-		var_dump(Input::all());
+		$v = Topic::validate(Input::all());
+		if ($v->fails()) {
+			return Redirect::back()
+				->withErrors($v)
+				->withInput();
+		}
+
+		$topic = new Topic;
+		$topic->node_id = Input::get('node_id');
+		$topic->title   = Input::get('title');
+		$topic->content = Input::get('content');
+
+		if (!$topic->save()) {
+			return '404';
+		}
+
+		return Redirect::to('t/' . ($topic->id + 2013));
 	}
 
 }

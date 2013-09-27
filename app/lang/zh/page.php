@@ -25,7 +25,7 @@ return array(
 	'member'                       => '社区相关成员',
 	'title'                        => '标题',
 	'content'                      => '内容',
-	'create_topic'                 => '发表话题',
+	'create_topic'                 => '新建话题',
 	'discuss'                      => '讨论',
 	'slash'                        => '／',
 	'read'                         => '阅读',

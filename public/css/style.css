@@ -403,3 +403,7 @@ span.error {
 	text-decoration: none;
 	line-height: 20px;
 }
+.nice-box > .text-center {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
