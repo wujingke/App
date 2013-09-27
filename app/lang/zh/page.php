@@ -31,5 +31,6 @@ return array(
 	'read'                         => '阅读',
 	'submit'                       => '提交',
 	'update_successfully'          => '更新成功',
+	'reply'                        => '回复',
 
 );

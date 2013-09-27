@@ -45,3 +45,5 @@ Route::delete('topic/{id}', array('uses'=>'TopicController@destroy'));
 Route::post('topic/store', array('uses'=>'TopicController@store'));
 
 Route::get('topic/{id}', array('uses'=>'TopicController@edit'));
+
+Route::get('u/{username}', array('uses'=>'UserController@show'));

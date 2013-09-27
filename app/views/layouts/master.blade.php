@@ -17,7 +17,7 @@
         <a href="{{ URL::to('/') }}" class="logo"></a>
         <ul class="io columns tiles">
           @if(Auth::check())
-            <li><a href="{{ URL::to('/') }}">{{ Auth::user()->username }}</a></li>
+            <li><a href="{{ URL::to('u/' . Auth::user()->username) }}">{{ Auth::user()->username }}</a></li>
             <li><a href="{{ URL::to('settings') }}">{{ Lang::get('page.settings') }}</a></li>
             <li><a href="{{ URL::to('logout') }}">{{ Lang::get('page.logout') }}</a></li>
           @else

@@ -13,11 +13,16 @@
 		<span><i class="icon-eye"></i>5</span>
 		<span><i class="icon-clock"></i><span class="timeago" date-time="{{ $topic->created_at }}"></span></span>
 	</div>
-	<div class="topic-comments">
-		{{ Form::open(array('url'=>'', 'class'=>'field')) }}
-			{{ Form::textarea('comment', '', array('class'=>'textarea input', 'rows'=>'3')) }}
+	<ul class="topic-comments">
+		{{ Form::open(array('url'=>'')) }}
+			<li class="field">
+				{{ Form::textarea('comment', '', array('class'=>'textarea input', 'rows'=>'3')) }}
+			</li>
+			<li class="text-right">
+				{{ Form::submit(Lang::get('page.reply'), array('class'=>'btn-def btn-def-orange')) }}
+			</li>
 		{{ Form::close() }}
-	</div>
+	</ul>
 
 @stop
 
