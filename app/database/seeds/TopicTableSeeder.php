@@ -5,6 +5,7 @@ class TopicTableSeeder extends Seeder {
 	public function run()
 	{
         DB::table('topics')->delete();
+        DB::table('replies')->delete();
 
 		$topics = array(
             array(
@@ -41,7 +42,32 @@ class TopicTableSeeder extends Seeder {
             ),
 		);
 
+        $replies = array(
+            array(
+                'user_id'    => 3,
+                'topic_id'   => 1,
+                'content'    => 'Some Comment',
+                'created_at' => new DateTime,
+                'updated_at' => new DateTime,
+            ),
+            array(
+                'user_id'    => 3,
+                'topic_id'   => 1,
+                'content'    => 'Some Comment 1',
+                'created_at' => new DateTime,
+                'updated_at' => new DateTime,
+            ),
+            array(
+                'user_id'    => 3,
+                'topic_id'   => 1,
+                'content'    => 'Some Comment 2',
+                'created_at' => new DateTime,
+                'updated_at' => new DateTime,
+            ),
+        );
+
 		DB::table('topics')->insert($topics);
+        DB::table('replies')->insert($replies);
 	}
 
 }
