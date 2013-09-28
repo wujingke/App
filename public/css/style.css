@@ -291,31 +291,33 @@ span.error {
 	font-size: 14px;
 }
 .nice-tabs {
-	min-height: 50px;
-	border-bottom: 3px solid #ededed;
-	padding: 0 20px;
+	padding: 20px 20px;
 }
 .nice-tabs > li {
-	float: right;
-	display:  inline-block;
+	border-left: 3px solid #ededed;
+	border-right: 3px solid transparent;
+	padding: 2px 16px 4px 16px;
+	line-height: 32px;
+	font-size: 16px;
 }
 .nice-tabs > li > a {
 	display: block;
-	height: 50px;
-	line-height: 47px;
-	padding: 0 12px;
 	-webkit-transition: .32s all ease-in-out;
 	-moz-transition: .32s all ease-in-out;
 	-ms-transition: .32s all ease-in-out;
 	-o-transition: .32s all ease-in-out;
 	transition: .32s all ease-in-out;
 }
+.nice-tabs > li:hover {
+	border-right: 3px solid #eb8142;
+	background-color: #faf4f1;
+}
 .nice-tabs > li > a:hover {
 	color: #eb8142;
 	font-weight: bold;
 }
-.nice-tabs > li.active > a {
-	border-bottom: 3px solid #eb8142;
+.nice-tabs > li.active {
+	border-left: 3px solid #eb8142;
 }
 .profile-form {
 	padding: 40px 8%;

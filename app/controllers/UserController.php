@@ -7,9 +7,12 @@ class UserController extends BaseController {
 		//return View::make('users.edit');
 	}
 
-	public function show()
+	public function show($username)
 	{
-		return View::make('users.show');
+		$user = User::whereUsername($username)->first();
+
+		return View::make('users.show')
+			->with('topics', $user->topics);
 	}
 
 	public function create()

@@ -16,7 +16,7 @@
 	<ul class="topic-comments">
 		{{ Form::open(array('url'=>'')) }}
 			<li class="field">
-				{{ Form::textarea('comment', '', array('class'=>'textarea input', 'rows'=>'3')) }}
+				{{ Form::textarea('comment', '', array('class'=>'textarea input', 'rows'=>'3', 'autocomplete'=>'off')) }}
 			</li>
 			<li class="text-right">
 				{{ Form::submit(Lang::get('page.reply'), array('class'=>'btn-def btn-def-orange')) }}

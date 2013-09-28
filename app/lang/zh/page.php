@@ -32,5 +32,10 @@ return array(
 	'submit'                       => '提交',
 	'update_successfully'          => '更新成功',
 	'reply'                        => '回复',
+	'notify'                       => '通知',
+	'user_topics'                  => '发布的话题',
+	'user_info'                    => '个人信息',
+	'user_follower'                => '跟随者',
+	'user_following'               => '关注的人',
 
 );

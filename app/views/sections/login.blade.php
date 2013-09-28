@@ -5,10 +5,10 @@
       <p class="welcome"><i class="icon-login"></i>{{ Lang::get('page.welcome_back') }}</p>
       <ul>
         <li class="field">
-          {{ Form::text('email', '', array('class'=>'input', 'placeholder'=>Lang::get('page.email_or_username'))) }}
+          {{ Form::text('email', '', array('class'=>'input', 'placeholder'=>Lang::get('page.email_or_username'), 'autocomplete'=>'off')) }}
         </li>
         <li class="field">
-          {{ Form::password('password', array('class'=>'input', 'placeholder'=>Lang::get('page.password'))) }}
+          {{ Form::password('password', array('class'=>'input', 'placeholder'=>Lang::get('page.password'), 'autocomplete'=>'off')) }}
         </li>
         <li>
           <label class="inline">
