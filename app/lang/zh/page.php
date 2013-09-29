@@ -51,4 +51,5 @@ return array(
 	'company'                      => '公司／学校',
 	'contact_email'                => '联系邮箱',
 	'update_avatar'                => '更新头像',
+	'save'                         => '保存',
 );

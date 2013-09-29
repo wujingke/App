@@ -1,6 +1,13 @@
 (function() {
 	$(document).ready(function() {
 		var canClose = true;
+		var updateCoords = function(c) {
+			$('#x').val(c.x);
+			$('#y').val(c.y);
+			$('#w').val(c.w);
+			$('#h').val(c.h);
+		};
+
 		$(".login>a").click(function(e) {
 			e.preventDefault();
 			$(".modal").addClass("active");
@@ -29,6 +36,10 @@
 		$(".timeago").timeago();
 		$('#insert-picture').click(function() {
 			
+		});
+		$('#cropbox').Jcrop({
+			aspectRatio: 1,
+			onSelect: updateCoords
 		});
 	});
 })();

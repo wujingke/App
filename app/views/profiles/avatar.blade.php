@@ -13,9 +13,14 @@
 	<ul class="edit-avatar">
 
 		{{ HTML::image('img/pretty.jpg', '', array('id'=>'cropbox')) }}
-	{{ Form::open(array('url'=>'settings/password', 'method'=>'put')) }}
 
-	{{ Form::close() }}
+		{{ Form::open(array('url'=>'settings/avatar')) }}
+			{{ Form::hidden('x', '', array('id'=>'x')) }}
+			{{ Form::hidden('y', '', array('id'=>'y')) }}
+			{{ Form::hidden('h', '', array('id'=>'h')) }}
+			{{ Form::hidden('w', '', array('id'=>'w')) }}
+			{{ Form::submit(Lang::get('page.save')) }}
+		{{ Form::close() }}
 
 	</ul>
 

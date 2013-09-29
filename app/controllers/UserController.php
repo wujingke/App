@@ -88,4 +88,31 @@ class UserController extends BaseController {
 		return View::make('profiles.avatar');
 	}
 
+	public function updateAvatar()
+	{
+		$src = public_path() . '/img/pretty.jpg';
+
+		$position = array(
+			'x' => Input::get('x'),
+			'y' => Input::get('y'),
+			'w' => Input::get('w'),
+			'h' => Input::get('h'),
+		);
+
+		$avatar = $this->generateAvatar($src, $position, 128);
+
+		return Redirect::back()
+			->with('avatar', $avatar);
+	}
+
+	private function generateAvatar($src, $position, $size)
+	{
+		$avatar = ImageCreateTrueColor($size, $size);
+
+		$output = public_path() . '/avatars/' . sha1(str_random(32)) . '.png';
+
+		imagecopyresampled($avatar, imagecreatefromjpeg($src), 0, 0, $position['x'], $position['y'], $size, $size, $position['w'], $position['h']);
+
+		return imagepng($avatar, $output) ? $output : false;
+	}
 }
