@@ -441,3 +441,33 @@ span.error {
 .edit-password li, .edit-profile li {
 	text-align: right;
 }
+.edit-avatar {
+
+}
+.nice-avatar {
+	text-align: center;
+}
+.nice-avatar > img {
+	border-radius: 36px;
+	width: 72px;
+	height: 72px;
+	-webkit-box-shadow: 0 0 12px rgba(0,0,0,0.19);
+	-moz-box-shadow: 0 0 12px rgba(0,0,0,0.19);
+	-ms-box-shadow: 0 0 12px rgba(0,0,0,0.19);
+	-o-box-shadow: 0 0 12px rgba(0,0,0,0.19);
+	box-shadow: 0 0 12px rgba(0,0,0,0.19);
+	-webkit-transition: box-shadow 0.3s ease;
+	-moz-transition: box-shadow 0.3s ease;
+	-ms-transition: box-shadow 0.3s ease;
+	-o-transition: box-shadow 0.3s ease;
+	transition: box-shadow 0.3s ease;
+}
+.nice-avatar > img:hover {
+	-webkit-box-shadow: 0 0 17px rgba(0,0,0,0.23);
+	-moz-box-shadow: 0 0 17px rgba(0,0,0,0.23);
+	-ms-box-shadow: 0 0 17px rgba(0,0,0,0.23);
+	-o-box-shadow: 0 0 17px rgba(0,0,0,0.23);
+	box-shadow: 0 0 17px rgba(0,0,0,0.23);
+	opacity: 0.8;
+	cursor: pointer;
+}

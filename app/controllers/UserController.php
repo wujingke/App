@@ -83,4 +83,9 @@ class UserController extends BaseController {
 			->with('message', Lang::get('page.update_successfully'));
 	}
 
+	public function uploadAvatar()
+	{
+		return View::make('profiles.avatar');
+	}
+
 }

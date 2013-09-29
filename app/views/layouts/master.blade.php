@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
+  {{ HTML::style('css/jquery.jcrop.css') }}
   {{ HTML::style('css/gumby.css') }}
   {{ HTML::style('css/style.css') }}
   {{ HTML::script('js/jquery.js') }}
-  {{ HTML::script('js/jquery.placeholder.js') }}
-  {{ HTML::script('js/timeago.js') }}
-  {{ HTML::script('js/timeago.lang.zh.js') }}
 </head>
 <body>
   <div class="wrapper">
@@ -48,6 +46,10 @@
   @unless(Auth::check())
     @include('sections.login')
   @endunless
+  {{ HTML::script('js/timeago.js') }}
+  {{ HTML::script('js/timeago.lang.zh.js') }}
+  {{ HTML::script('js/jquery.placeholder.js') }}
+  {{ HTML::script('js/jquery.jcrop.js') }}
   {{ HTML::script('js/app.js') }}
 </body>
 </html>

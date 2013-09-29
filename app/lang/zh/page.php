@@ -37,7 +37,7 @@ return array(
 	'user_info'                    => '个人信息',
 	'user_follower'                => '跟随者',
 	'user_following'               => '关注的人',
-	'my_profile'                   => '我的个人资料',
+	'my_profile'                   => '我的资料',
 	'edit_password'                => '修改密码',
 	'current_password'             => '当前密码',
 	'new_password'                 => '新密码',
@@ -50,4 +50,5 @@ return array(
 	'website'                      => '个人网址',
 	'company'                      => '公司／学校',
 	'contact_email'                => '联系邮箱',
+	'update_avatar'                => '更新头像',
 );

@@ -9,7 +9,6 @@
 	<ul class="edit-profile">
 
 	{{ Form::open(array('url'=>'settings/profile', 'method'=>'put')) }}
-
 		<li class="field">
 			{{ Form::label('nickname', Lang::get('page.nickname'), array('class'=>'inline')) }}
 			{{ Form::text('nickname', $profile->nickname, array('class'=>'wide input')) }}
