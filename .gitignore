@@ -1,5 +1,6 @@
 /bootstrap/compiled.php
 /vendor
+/public/avatars
 composer.phar
 composer.lock
 .DS_Store
