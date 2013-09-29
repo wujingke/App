@@ -43,4 +43,5 @@ return array(
 	'new_password'                 => '新密码',
 	'confirm_password'             => '确认新密码',
 	'confirm'                      => '确认',
+	'current_password_incorrect'   => '亲，原先的密码不对哦！',
 );

@@ -27,7 +27,33 @@ class UserController extends BaseController {
 
 	public function update()
 	{
-		
+		if (Hash::check(Input::get('current_password'), Auth::user()->password)) {
+			$v = Validator::make(
+				array(
+					'password'              => Input::get('password'),
+					'password_confirmation' => Input::get('password_confirmation'),
+				),
+				array(
+					'password'              =>'required|alpha_dash|between:6,16|confirmed',
+					'password_confirmation' =>'required|alpha_dash|between:6,16',
+				)
+			);
+
+			if ($v->fails()) {
+				return Redirect::back()
+					->withErrors($v);
+			}
+
+			Auth::user()->password = Hash::make(Input::get('password'));
+
+			Auth::user()->save();
+
+			return Redirect::back()
+				->with('message', Lang::get('page.update_successfully'));
+		}
+
+		return Redirect::back()
+			->with('message', Lang::get('page.current_password_incorrect'));
 	}
 
 	public function profileIndex()
