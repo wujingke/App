@@ -435,3 +435,9 @@ span.error {
 	text-align: center;
 	padding: 12px 0;
 }
+.edit-password {
+	padding: 20px 120px 20px 40px;
+}
+.edit-password li {
+	text-align: right;
+}

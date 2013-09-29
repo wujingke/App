@@ -22,6 +22,8 @@ Route::get('settings/profile', array('uses'=>'UserController@profileEdit'));
 
 Route::put('settings/profile', array('uses'=>'UserController@profileUpdate'));
 
+Route::get('settings/password', array('uses'=>'UserController@edit'));
+
 Route::put('settings/password', array('uses'=>'UserController@update'));
 
 Route::get('~users', array('uses'=>'PageController@users'));

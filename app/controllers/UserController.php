@@ -4,7 +4,7 @@ class UserController extends BaseController {
 
 	public function edit()
 	{
-		//return View::make('users.edit');
+		return View::make('users.edit');
 	}
 
 	public function show($username)
@@ -27,7 +27,7 @@ class UserController extends BaseController {
 
 	public function update()
 	{
-
+		
 	}
 
 	public function profileIndex()

@@ -2,6 +2,10 @@
 
 @section('app')
 
+<div class="nice-notice">
+	<p>{{ Lang::get('page.update_successfully') }}</p>
+</div>
+
 <ul class="profile-form">
 
 {{ Form::open(array('url'=>'', 'method'=>'put')) }}
@@ -15,6 +19,6 @@
 
 @section('sidebar')
 	<div class="nice-box">
-		@include('sections.settings')
+		@include('sections.settings._profile')
 	</div>
 @stop
