@@ -44,4 +44,10 @@ return array(
 	'confirm_password'             => '确认新密码',
 	'confirm'                      => '确认',
 	'current_password_incorrect'   => '亲，原先的密码不对哦！',
+	'update'                       => '更新',
+	'nickname'                     => '称呼',
+	'location'                     => '居住地',
+	'website'                      => '个人网址',
+	'company'                      => '公司／学校',
+	'contact_email'                => '联系邮箱',
 );

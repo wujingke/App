@@ -435,9 +435,9 @@ span.error {
 	text-align: center;
 	padding: 12px 0;
 }
-.edit-password {
+.edit-password, .edit-profile {
 	padding: 20px 120px 20px 40px;
 }
-.edit-password li {
+.edit-password li, .edit-profile li {
 	text-align: right;
 }

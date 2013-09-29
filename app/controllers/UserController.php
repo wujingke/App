@@ -63,12 +63,24 @@ class UserController extends BaseController {
 
 	public function profileEdit()
 	{
-		return View::make('profiles.edit');
+		return View::make('profiles.edit')
+			->with('profile', Auth::user()->profile);
 	}
 
 	public function profileUpdate()
 	{
+		$profile = Auth::user()->profile;
 
+		$profile->nickname      = Input::get('nickname');
+		$profile->location      = Input::get('location');
+		$profile->website       = Input::get('website');
+		$profile->company       = Input::get('company');
+		$profile->contact_email = Input::get('contact_email');
+
+		$profile->save();
+
+		return Redirect::back()
+			->with('message', Lang::get('page.update_successfully'));
 	}
 
 }

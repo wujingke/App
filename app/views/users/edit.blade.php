@@ -27,7 +27,7 @@
 		</li>
 	{{ Form::close() }}
 
-</ul>
+	</ul>
 
 @stop
 
