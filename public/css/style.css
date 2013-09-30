@@ -276,9 +276,6 @@ p.joinus {
 .topic-comments {
 	padding: 20px 5%;
 }
-.signup-form {
-	padding: 40px 8%;
-}
 span.error {
 	background-color: #c03d20;
 	color: #fff;
@@ -436,10 +433,10 @@ span.error {
 	text-align: center;
 	padding: 12px 0;
 }
-.edit-password, .edit-profile {
+.edit-password, .edit-profile, .create-user, .create-session {
 	padding: 20px 120px 20px 40px;
 }
-.edit-password li, .edit-profile li {
+.edit-password li, .edit-profile li, .create-user li.field, .create-session li {
 	text-align: right;
 }
 .edit-avatar {

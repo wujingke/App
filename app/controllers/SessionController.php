@@ -9,14 +9,33 @@ class SessionController extends BaseController {
 
 	public function store()
 	{
-		$user = array(
-			'email' => Input::get('email'),
+		$authenticator = array(
+			'email'    => Input::get('username'),
 			'password' => Input::get('password')
 		);
-		if (Auth::attempt($user, Input::has('remember') ? true : false)) {
+
+		$v = Validator::make(array('email'=>$authenticator['email']), array('email'=>'required|email'));
+
+		if ($v->fails()) {
+
+			$user = User::whereUsername(Input::get('username'))->first();
+			
+			if (!$user) {
+				return Redirect::back()
+					->with('message', Lang::get('page.user_inexistence'))
+					->withInput(Input::except('password'));
+			}
+
+			$authenticator['email'] = $user->email;
+		}
+
+		if (Auth::attempt($authenticator, Input::has('remember') ? true : false)) {
 			return Redirect::to('/');
 		}
 
+		return Redirect::back()
+			->with('message', Lang::get('page.password_incorrect'))
+			->withInput(Input::except('password'));
 	}
 
 	public function destroy()

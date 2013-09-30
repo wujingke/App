@@ -2,33 +2,42 @@
 
 @section('app')
 
-<ul class="nice-tabs">
-	<li><a href="{{ URL::to('login') }}">{{ Lang::get('page.login') }}</a></li>
-	<li class="active"><a href="{{ URL::to('signup') }}">{{ Lang::get('page.signup') }}</a></li>
-</ul>
-
-{{-- <p class="joinus">{{ Lang::get('page.welcome_to_join_us') }}</p> --}}
-
-<ul class="signup-form">
+<ul class="create-user">
 	{{ Form::open(array('url'=>'user/store')) }}
 		<li class="field">
-			{{ Form::text('username', '', array('class'=>'input')) }}
-			{{ Session::has('username') ? '' : '<span class="error">fgdfgfg</span>' }}
+			{{ Form::label('username', '', array('class'=>'inline')) }}
+			{{ Form::text('username', '', array('class'=>'wide input')) }}
 		</li>
 		<li class="field">
-			{{ Form::text('email', '', array('class'=>'input')) }}
+			{{ Form::label('email', '', array('class'=>'inline')) }}
+			{{ Form::text('email', '', array('class'=>'wide input')) }}
 		</li>
 		<li class="field">
-			{{ Form::password('password', array('class'=>'input')) }}
+			{{ Form::label('password', '', array('class'=>'inline')) }}
+			{{ Form::password('password', array('class'=>'wide input')) }}
 		</li>
 		<li>
 			<label>{{ Form::checkbox('term', true) }}{{ Lang::get('page.i_agree_with_the_above_terms') }}</label>
 		</li>
-		<li>
+		<li class="text-right">
 			{{ Form::submit(Lang::get('page.signup'), array('class'=>'btn-def btn-def-orange')) }}
 		</li>
 
 	{{ Form::close() }}
 </ul>
+
+@stop
+
+
+@section('sidebar')
+
+	<div class="nice-box">
+
+		<ul class="nice-tabs">
+			<li class="active"><a href="{{ URL::to('signup') }}">{{ Lang::get('page.signup') }}</a></li>
+			<li><a href="{{ URL::to('login') }}">{{ Lang::get('page.login') }}</a></li>
+		</ul>
+
+	</div>
 
 @stop

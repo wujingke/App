@@ -28,6 +28,7 @@ return array(
 	'create_topic'                 => '新建话题',
 	'discuss'                      => '讨论',
 	'slash'                        => '／',
+	'username_or_password'         => '用户名／邮箱',
 	'read'                         => '阅读',
 	'submit'                       => '提交',
 	'update_successfully'          => '更新成功',
@@ -54,4 +55,6 @@ return array(
 	'save'                         => '保存',
 	'upload'                       => '上传',
 	'file_unsupported'             => '暂不支持此文件类型',
+	'user_inexistence'             => '该用户不存在',
+	'password_incorrect'           => '密码不对',
 );
