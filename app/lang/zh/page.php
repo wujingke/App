@@ -52,4 +52,5 @@ return array(
 	'contact_email'                => '联系邮箱',
 	'update_avatar'                => '更新头像',
 	'save'                         => '保存',
+	'upload'                       => '上传',
 );

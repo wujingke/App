@@ -463,14 +463,13 @@ span.error {
 	-o-transition: box-shadow 0.3s ease;
 	transition: box-shadow 0.3s ease;
 }
-.nice-avatar > img:hover {
+.nice-avatar > img.hover {
 	-webkit-box-shadow: 0 0 17px rgba(0,0,0,0.23);
 	-moz-box-shadow: 0 0 17px rgba(0,0,0,0.23);
 	-ms-box-shadow: 0 0 17px rgba(0,0,0,0.23);
 	-o-box-shadow: 0 0 17px rgba(0,0,0,0.23);
 	box-shadow: 0 0 17px rgba(0,0,0,0.23);
 	opacity: 0.8;
-	cursor: pointer;
 }
 .crop-avatar {
 	padding: 4px 4px;
@@ -484,4 +483,20 @@ span.error {
 	margin: 0;
 	padding-top: 4px;
 	text-align: right;
+}
+.hide-input {
+
+}
+.nice-avatar .hide-input {
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+	position: relative;
+	top: -83px;
+	cursor: pointer;
+	opacity: 0;
+}
+.auto-submit {
+	position: relative;
+	top: -64px;
 }

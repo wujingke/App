@@ -27,8 +27,8 @@
 			<li class="three columns nice-avatar">
 				{{ HTML::image(Auth::user()->profile->avatar_square_url) }}
 				{{ Form::open(array('url'=>'settings/avatar/upload', 'files'=>true)) }}
-					{{ Form::file('avatar') }}
-					{{ Form::submit('Up') }}
+					{{ Form::file('avatar', array('class'=>'hide-input')) }}
+					{{ Form::submit(Lang::get('page.upload'), array('class'=>'btn-def btn-def-orange auto-submit')) }}
 				{{ Form::close() }}
 			</li>
 
