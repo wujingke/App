@@ -41,5 +41,20 @@
 			aspectRatio: 1,
 			onSelect: updateCoords
 		});
+		$(".nice-avatar>form>input:submit").click(function(e) {
+			var avatarPath = $(".open-file").val();
+			if (avatarPath.length == 0) {
+				e.preventDefault();
+
+			};
+		});
+		$(".trigger-save").click(function(e) {
+			e.preventDefault();
+			if (parseInt($("#w").val())) {
+				$(".crop-avatar>form").submit();
+			} else {
+
+			}
+		});
 	});
 })();

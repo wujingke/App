@@ -91,6 +91,14 @@ class UserController extends BaseController {
 	public function uploadAvatar()
 	{
 		$avatarFile = Input::file('avatar');
+
+		$v = Validator::make(array('avatar'=>$avatarFile), array('avatar'=>'mimes:png'));
+
+		if ($v->fails()) {
+			return Redirect::back()
+				->with('message', Lang::get('page.file_unsupported'));
+		}
+
 		$avatarFileName = sha1(str_random(40)) . '.' . $avatarFile->getClientOriginalExtension();
 		$avatarFolderName = sha1(str_random(40));
 		
@@ -115,6 +123,20 @@ class UserController extends BaseController {
 			'w' => Input::get('w'),
 			'h' => Input::get('h'),
 		);
+
+		$v = Validator::make(
+			$position,
+			array(
+				'x' => 'required|alpha_num',
+				'y' => 'required|alpha_num',
+				'w' => 'required|alpha_num',
+				'h' => 'required|alpha_num',
+			)
+		);
+
+		if ($v->fails()) {
+			
+		}
 
 		$avatar = $this->generateAvatar($src, $position, 128);
 

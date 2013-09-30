@@ -53,4 +53,5 @@ return array(
 	'update_avatar'                => '更新头像',
 	'save'                         => '保存',
 	'upload'                       => '上传',
+	'file_unsupported'             => '暂不支持此文件类型',
 );

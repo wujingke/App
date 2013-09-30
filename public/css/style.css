@@ -203,6 +203,7 @@
 	border-color: #ea7138;
 }
 .btn-def-orange:hover {
+	color: #ffffff;
 	background-color: #ea7138;
 	border-color: #da6128;
 }
@@ -448,28 +449,16 @@ span.error {
 .nice-avatar {
 	text-align: center;
 }
-.nice-avatar > img {
-	border-radius: 36px;
-	width: 72px;
-	height: 72px;
-	-webkit-box-shadow: 0 0 12px rgba(0,0,0,0.19);
-	-moz-box-shadow: 0 0 12px rgba(0,0,0,0.19);
-	-ms-box-shadow: 0 0 12px rgba(0,0,0,0.19);
-	-o-box-shadow: 0 0 12px rgba(0,0,0,0.19);
-	box-shadow: 0 0 12px rgba(0,0,0,0.19);
-	-webkit-transition: box-shadow 0.3s ease;
-	-moz-transition: box-shadow 0.3s ease;
-	-ms-transition: box-shadow 0.3s ease;
-	-o-transition: box-shadow 0.3s ease;
-	transition: box-shadow 0.3s ease;
-}
-.nice-avatar > img.hover {
-	-webkit-box-shadow: 0 0 17px rgba(0,0,0,0.23);
-	-moz-box-shadow: 0 0 17px rgba(0,0,0,0.23);
-	-ms-box-shadow: 0 0 17px rgba(0,0,0,0.23);
-	-o-box-shadow: 0 0 17px rgba(0,0,0,0.23);
-	box-shadow: 0 0 17px rgba(0,0,0,0.23);
-	opacity: 0.8;
+.nice-avatar > span {
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+	-webkit-box-shadow: 0 0 4px rgba(0,0,0,0.20);
+	-moz-box-shadow: 0 0 4px rgba(0,0,0,0.20);
+	-ms-box-shadow: 0 0 4px rgba(0,0,0,0.20);
+	-o-box-shadow: 0 0 4px rgba(0,0,0,0.20);
+	box-shadow: 0 0 4px rgba(0,0,0,0.20);
+	padding: 2px 2px;
 }
 .crop-avatar {
 	padding: 4px 4px;
@@ -481,22 +470,14 @@ span.error {
 }
 .crop-avatar form {
 	margin: 0;
-	padding-top: 4px;
-	text-align: right;
+	padding: 0;
 }
-.hide-input {
-
-}
-.nice-avatar .hide-input {
+.open-file {
 	display: inline-block;
-	width: 80px;
-	height: 80px;
-	position: relative;
-	top: -83px;
+	width: 100px;
+	height: 100px;
 	cursor: pointer;
-	opacity: 0;
-}
-.auto-submit {
+	top: -100px;
 	position: relative;
-	top: -64px;
+	opacity: 0;
 }

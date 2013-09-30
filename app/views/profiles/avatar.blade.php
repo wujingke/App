@@ -17,18 +17,18 @@
 				{{ Form::open(array('url'=>'settings/avatar')) }}
 					{{ Form::hidden('x', '0', array('id'=>'x')) }}
 					{{ Form::hidden('y', '0', array('id'=>'y')) }}
-					{{ Form::hidden('h', '128', array('id'=>'h')) }}
-					{{ Form::hidden('w', '128', array('id'=>'w')) }}
-					{{ Form::submit(Lang::get('page.save'), array('class'=>'btn-def btn-def-orange')) }}
+					{{ Form::hidden('h', '0', array('id'=>'h')) }}
+					{{ Form::hidden('w', '0', array('id'=>'w')) }}
 				{{ Form::close() }}
 
 			</li>
 
 			<li class="three columns nice-avatar">
-				{{ HTML::image(Auth::user()->profile->avatar_square_url) }}
+				<span>{{ HTML::image(Auth::user()->profile->avatar_square_url) }}</span>
 				{{ Form::open(array('url'=>'settings/avatar/upload', 'files'=>true)) }}
-					{{ Form::file('avatar', array('class'=>'hide-input')) }}
-					{{ Form::submit(Lang::get('page.upload'), array('class'=>'btn-def btn-def-orange auto-submit')) }}
+					{{ Form::file('avatar', array('class'=>'open-file')) }}
+					{{ Form::submit(Lang::get('page.upload'), array('class'=>'btn-def btn-def-orange')) }}
+					<a href="" class="trigger-save btn-def btn-def-orange">{{ Lang::get('page.save') }}</a>
 				{{ Form::close() }}
 			</li>
 
