@@ -16,8 +16,10 @@
 			{{ Form::label('password', '', array('class'=>'inline')) }}
 			{{ Form::password('password', array('class'=>'wide input')) }}
 		</li>
-		<li>
-			<label>{{ Form::checkbox('term', true) }}{{ Lang::get('page.i_agree_with_the_above_terms') }}</label>
+		<li class="field">
+			<div class="wide text-right">
+				<label class="wide">{{ Form::checkbox('term', true) }}{{ Lang::get('page.i_agree_with_the_above_terms') }}</label>
+			</div>
 		</li>
 		<li class="text-right">
 			{{ Form::submit(Lang::get('page.signup'), array('class'=>'btn-def btn-def-orange')) }}
