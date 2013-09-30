@@ -442,7 +442,8 @@ span.error {
 	text-align: right;
 }
 .edit-avatar {
-
+	margin-top: 10px;
+	padding: 0 5%;
 }
 .nice-avatar {
 	text-align: center;
@@ -470,4 +471,12 @@ span.error {
 	box-shadow: 0 0 17px rgba(0,0,0,0.23);
 	opacity: 0.8;
 	cursor: pointer;
+}
+.crop-avatar {
+	padding: 4px 4px;
+	-webkit-box-shadow: 0 0 4px rgba(0,0,0,0.28);
+	-moz-box-shadow: 0 0 4px rgba(0,0,0,0.28);
+	-ms-box-shadow: 0 0 4px rgba(0,0,0,0.28);
+	-o-box-shadow: 0 0 4px rgba(0,0,0,0.28);
+	box-shadow: 0 0 4px rgba(0,0,0,0.28);
 }

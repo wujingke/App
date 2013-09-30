@@ -6,23 +6,31 @@
 		{{ Session::has('message') ? '<p>' . Session::get('message') . '</p>' : '' }}
 	</div>
 
-	<div class="nice-avatar">
-		{{ HTML::image('img/avatar-default.png') }}
+	<div class="edit-avatar">
+
+		<ul class="row">
+
+			<li class="nine columns crop-avatar">
+
+				{{ HTML::image('img/pretty.jpg', '', array('id'=>'cropbox')) }}
+
+				{{ Form::open(array('url'=>'settings/avatar')) }}
+					{{ Form::hidden('x', '', array('id'=>'x')) }}
+					{{ Form::hidden('y', '', array('id'=>'y')) }}
+					{{ Form::hidden('h', '', array('id'=>'h')) }}
+					{{ Form::hidden('w', '', array('id'=>'w')) }}
+					{{ Form::submit(Lang::get('page.save')) }}
+				{{ Form::close() }}
+
+			</li>
+
+			<li class="three columns nice-avatar">
+				{{ HTML::image('img/avatar-default.png') }}
+			</li>
+
+		</ul>
+
 	</div>
-
-	<ul class="edit-avatar">
-
-		{{ HTML::image('img/pretty.jpg', '', array('id'=>'cropbox')) }}
-
-		{{ Form::open(array('url'=>'settings/avatar')) }}
-			{{ Form::hidden('x', '', array('id'=>'x')) }}
-			{{ Form::hidden('y', '', array('id'=>'y')) }}
-			{{ Form::hidden('h', '', array('id'=>'h')) }}
-			{{ Form::hidden('w', '', array('id'=>'w')) }}
-			{{ Form::submit(Lang::get('page.save')) }}
-		{{ Form::close() }}
-
-	</ul>
 
 @stop
 
