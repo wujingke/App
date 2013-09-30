@@ -57,4 +57,7 @@ return array(
 	'file_unsupported'             => '暂不支持此文件类型',
 	'user_inexistence'             => '该用户不存在',
 	'password_incorrect'           => '密码不对',
+	'username'                     => '用户名',
+	'email'                        => '邮箱',
+	
 );

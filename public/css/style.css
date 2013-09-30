@@ -478,3 +478,7 @@ span.error {
 	position: relative;
 	opacity: 0;
 }
+.cool-error {
+	color: #d04526;
+	font-size: 14px;
+}

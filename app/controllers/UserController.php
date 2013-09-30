@@ -22,7 +22,32 @@ class UserController extends BaseController {
 
 	public function store()
 	{
+		$v = Validator::make(Input::all(), array(
+			'username' => 'required|alpha_num|unique:users|min:4',
+			'email'    => 'required|email|unique:users',
+			'password' => 'required|alpha_dash|min:6|max:16',
+		));
 
+		if ($v->fails()) {
+			return Redirect::back()
+				->withErrors($v)
+				->withInput();
+		}
+
+		$user = new User;
+
+		$user->username = Input::get('username');
+		$user->email    = Input::get('email');
+		$user->password = Hash::make(Input::get('password'));
+
+		if ($user->save()) {
+			Auth::login($user);
+			return Redirect::to('/')
+				->with('suggestion', '');
+		}
+
+		return Redirect::back()
+			->with('message', '');
 	}
 
 	public function update()

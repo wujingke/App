@@ -8,6 +8,8 @@ Route::get('signup', array('uses'=>'UserController@create'));
 
 Route::post('session/store', array('uses'=>'SessionController@store'));
 
+Route::post('user/store', array('uses'=>'UserController@store'));
+
 Route::get('logout', array('uses'=>'SessionController@destroy'));
 
 Route::get('t/{id}', array('as'=>'topic', 'uses'=>'TopicController@show'));
