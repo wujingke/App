@@ -12,20 +12,24 @@
 
 			<li class="nine columns crop-avatar">
 
-				{{ HTML::image('img/pretty.jpg', '', array('id'=>'cropbox')) }}
+				{{ HTML::image(Auth::user()->profile->avatar_url, '', array('id'=>'cropbox')) }}
 
 				{{ Form::open(array('url'=>'settings/avatar')) }}
-					{{ Form::hidden('x', '', array('id'=>'x')) }}
-					{{ Form::hidden('y', '', array('id'=>'y')) }}
-					{{ Form::hidden('h', '', array('id'=>'h')) }}
-					{{ Form::hidden('w', '', array('id'=>'w')) }}
-					{{ Form::submit(Lang::get('page.save')) }}
+					{{ Form::hidden('x', '0', array('id'=>'x')) }}
+					{{ Form::hidden('y', '0', array('id'=>'y')) }}
+					{{ Form::hidden('h', '100', array('id'=>'h')) }}
+					{{ Form::hidden('w', '100', array('id'=>'w')) }}
+					{{ Form::submit(Lang::get('page.save'), array('class'=>'btn-def btn-def-orange')) }}
 				{{ Form::close() }}
 
 			</li>
 
 			<li class="three columns nice-avatar">
-				{{ HTML::image('img/avatar-default.png') }}
+				{{ HTML::image(Auth::user()->profile->avatar_url) }}
+				{{ Form::open(array('url'=>'settings/avatar/upload', 'files'=>true)) }}
+					{{ Form::file('avatar') }}
+					{{ Form::submit('Up') }}
+				{{ Form::close() }}
 			</li>
 
 		</ul>

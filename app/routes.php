@@ -26,9 +26,11 @@ Route::get('settings/password', array('uses'=>'UserController@edit'));
 
 Route::put('settings/password', array('uses'=>'UserController@update'));
 
-Route::get('settings/avatar', array('uses'=>'UserController@uploadAvatar'));
+Route::get('settings/avatar', array('uses'=>'UserController@editAvatar'));
 
 Route::post('settings/avatar', array('uses'=>'UserController@updateAvatar'));
+
+Route::post('settings/avatar/upload', array('uses'=>'UserController@uploadAvatar'));
 
 Route::get('~users', array('uses'=>'PageController@users'));
 

@@ -83,14 +83,31 @@ class UserController extends BaseController {
 			->with('message', Lang::get('page.update_successfully'));
 	}
 
-	public function uploadAvatar()
+	public function editAvatar()
 	{
 		return View::make('profiles.avatar');
 	}
 
+	public function uploadAvatar()
+	{
+		$avatarFile = Input::file('avatar');
+		$avatarFileName = sha1(str_random(40)) . '.' . $avatarFile->getClientOriginalExtension();
+		$avatarFolderName = sha1(str_random(40));
+		
+		$success = $avatarFile->move(public_path() . '/uploads/' . $avatarFolderName, $avatarFileName);
+
+		if ($success) {
+			$profile = Auth::user()->profile;
+			$profile->avatar_url = 'uploads/' . $avatarFolderName . '/' . $avatarFileName;
+			$profile->save();
+		}
+
+		return Redirect::back();
+	}
+
 	public function updateAvatar()
 	{
-		$src = public_path() . '/img/pretty.jpg';
+		$src = public_path() . '/' . Auth::user()->profile->avatar_url;
 
 		$position = array(
 			'x' => Input::get('x'),
