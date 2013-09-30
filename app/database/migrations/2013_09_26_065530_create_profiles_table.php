@@ -16,6 +16,7 @@ class CreateProfilesTable extends Migration {
 			$table->string('company');
 			$table->string('avatar_url');
 			$table->string('contact_email');
+			$table->string('avatar_square_url');
 			$table->timestamps();
 		});
 	}

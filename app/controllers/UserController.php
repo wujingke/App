@@ -118,18 +118,24 @@ class UserController extends BaseController {
 
 		$avatar = $this->generateAvatar($src, $position, 128);
 
+		if ($avatar) {
+			$profile = Auth::user()->profile;
+			$profile->avatar_square_url = $avatar;
+			$profile->save();
+		}
+
 		return Redirect::back()
-			->with('avatar', $avatar);
+			->with('message', Lang::get('page.update_successfully'));
 	}
 
 	private function generateAvatar($src, $position, $size)
 	{
 		$avatar = ImageCreateTrueColor($size, $size);
 
-		$output = public_path() . '/avatars/' . sha1(str_random(32)) . '.png';
+		$output = 'avatars/' . sha1(str_random(32)) . '.png';
 
-		imagecopyresampled($avatar, imagecreatefromjpeg($src), 0, 0, $position['x'], $position['y'], $size, $size, $position['w'], $position['h']);
+		imagecopyresampled($avatar, imagecreatefrompng($src), 0, 0, $position['x'], $position['y'], $size, $size, $position['w'], $position['h']);
 
-		return imagepng($avatar, $output) ? $output : false;
+		return imagepng($avatar, public_path() . '/' . $output) ? $output : false;
 	}
 }
