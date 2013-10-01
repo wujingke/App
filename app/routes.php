@@ -67,3 +67,5 @@ Route::get('u/{username}/followers', array('as'=>'userFollowers', 'uses'=>'UserC
 Route::get('u/{username}/following', array('as'=>'userFollowing', 'uses'=>'UserController@show'));
 
 Route::get('u/{username}/replies', array('uses'=>'UserController@show'));
+
+Route::post('reply/store', array('uses'=>'ReplyController@store'));

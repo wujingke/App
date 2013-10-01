@@ -273,7 +273,7 @@ p.joinus {
 	padding: 12px 5%;
 	color: #888;
 }
-.topic-comments {
+.topic-comments, .create-reply {
 	padding: 20px 5%;
 }
 span.error {
