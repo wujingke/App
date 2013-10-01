@@ -10,9 +10,18 @@ class UserController extends BaseController {
 	public function show($username)
 	{
 		$user = User::whereUsername($username)->first();
+		
+		if ($user) {
+			if (!Request::segment(3)) {
+				return View::make('users.personal.index')
+					->with('user', $user);
+			}
 
-		return View::make('users.show')
-			->with('topics', $user->topics);
+			return View::make('users.personal.' . Request::segment(3))
+				->with('user', $user);
+		}
+
+		return View::make('users.user_not_found');
 	}
 
 	public function create()
@@ -185,4 +194,5 @@ class UserController extends BaseController {
 
 		return imagepng($avatar, public_path() . '/' . $output) ? $output : false;
 	}
+
 }

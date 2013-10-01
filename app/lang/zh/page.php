@@ -36,7 +36,7 @@ return array(
 	'notify'                       => '通知',
 	'user_topics'                  => '发布的话题',
 	'user_info'                    => '个人信息',
-	'user_follower'                => '跟随者',
+	'user_followers'                => '跟随者',
 	'user_following'               => '关注的人',
 	'my_profile'                   => '我的资料',
 	'edit_password'                => '修改密码',

@@ -58,8 +58,12 @@ Route::post('topic/store', array('uses'=>'TopicController@store'));
 
 Route::get('topic/{id}', array('uses'=>'TopicController@edit'));
 
-Route::get('u/{username}', array('uses'=>'UserController@show'));
+Route::get('u/{username}', array('as'=>'userIndex', 'uses'=>'UserController@show'));
 
-Route::get('u/{username}/topics', array('uses'=>'UserController@show'));
+Route::get('u/{username}/topics', array('as'=>'userTopics', 'uses'=>'UserController@show'));
+
+Route::get('u/{username}/followers', array('as'=>'userFollowers', 'uses'=>'UserController@show'));
+
+Route::get('u/{username}/following', array('as'=>'userFollowing', 'uses'=>'UserController@show'));
 
 Route::get('u/{username}/replies', array('uses'=>'UserController@show'));
