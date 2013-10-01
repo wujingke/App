@@ -33,10 +33,11 @@ class TopicController extends BaseController {
 		}
 
 		$topic = new Topic;
-		$topic->user_id = Auth::user()->id;
-		$topic->node_id = Input::get('node_id');
-		$topic->title   = Input::get('title');
-		$topic->content = Input::get('content');
+		$topic->user_id      = Auth::user()->id;
+		$topic->node_id      = Input::get('node_id');
+		$topic->title        = Input::get('title');
+		$topic->content      = Input::get('content');
+		$topic->content_html = Topic::markdown(e(Input::get('content')));
 
 		if (!$topic->save()) {
 			return '404';

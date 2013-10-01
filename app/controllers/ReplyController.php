@@ -13,9 +13,10 @@ class ReplyController extends BaseController {
 
 		$reply = new Reply;
 
-		$reply->user_id  = Auth::user()->id;
-		$reply->topic_id = Input::get('topic_id');
-		$reply->content  = Input::get('content');
+		$reply->user_id      = Auth::user()->id;
+		$reply->topic_id     = Input::get('topic_id');
+		$reply->content      = Input::get('content');
+		$reply->content_html = Reply::markdown(e(Input::get('content')));
 
 		$reply->save();
 

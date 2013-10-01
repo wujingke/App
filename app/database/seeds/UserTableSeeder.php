@@ -32,14 +32,7 @@ class UserTableSeeder extends Seeder {
 
 		);
 
-        $profiles = array(
-            array('user_id' => 1),
-            array('user_id' => 2),
-            array('user_id' => 3),
-        );
-
-		DB::table('users')->insert($users);
-        DB::table('profiles')->insert($profiles);
+        DB::table('users')->insert($users);
 	}
 
 }

@@ -7,7 +7,7 @@
 		{{ $topic->title }}
 	</div>
 	<div class="topic-content">
-		{{ $topic->content }}
+		{{ $topic->content_html }}
 	</div>
 	<div class="topic-data">
 		<span><i class="icon-comment"></i>6</span>
@@ -22,7 +22,7 @@
 				<span class="meta"> {{ Lang::get('page.said') }}</span>
 				<span class="timeago meta" date-time="{{ $reply->created_at }}"></span>
 				<span class="meta pull_right trigger-content"><i class="icon-reply"></i></span>
-				<div>{{ $reply->content }}</div>
+				<div>{{ $reply->content_html }}</div>
 			</li>
 		@endforeach
 	</ul>

@@ -12,7 +12,8 @@ class CreateTopicsTable extends Migration {
 			$table->integer('user_id');
 			$table->integer('node_id');
 			$table->string('title');
-			$table->string('content');
+			$table->text('content');
+			$table->text('content_html');
 			$table->timestamps();
 		});
 	}
