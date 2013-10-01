@@ -3,6 +3,7 @@
 @section('app')
 
 	<div class="topic-title">
+		<span><i class="icon-bookmark"></i></span>
 		{{ $topic->title }}
 	</div>
 	<div class="topic-content">
@@ -29,7 +30,7 @@
 @section('sidebar')
 
 	<div class="nice-box">
-
+		@include('sections.vcard')
 	</div>
 
 @stop
