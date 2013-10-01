@@ -494,3 +494,19 @@ li.custom {
 	font-size: 16px;
 	overflow: hidden;
 }
+.user-info {
+	padding: 40px 40px;
+}
+.user-info > li {
+	padding: 4px 120px 4px 20px;
+}
+.user-info > li > span {
+	display: inline-block;
+	width: 100px;
+	text-align: right;
+	margin-right: 20px;
+}
+.user-info > .nice-avatar {
+	float: right;
+	margin-right: 20px;
+}

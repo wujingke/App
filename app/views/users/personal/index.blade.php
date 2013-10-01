@@ -2,7 +2,35 @@
 
 @section('app')
 
+	<ul class="user-info">
+		<div class="nice-avatar">
+			<span>{{ HTML::image($user->profile->avatar_square_url) }}</span>
+		</div>
+		<li>
+			<span>{{ Lang::get('page.nickname') }}</span>
+			{{ $user->profile->nickname }}
+		</li>
 
+		<li>
+			<span>{{ Lang::get('page.location') }}</span>
+			{{ $user->profile->location }}
+		</li>
+
+		<li>
+			<span>{{ Lang::get('page.website') }}</span>
+			{{ HTML::link($user->profile->website, $user->profile->website) }}
+		</li>
+
+		<li>
+			<span>{{ Lang::get('page.company') }}</span>
+			{{ $user->profile->company }}
+		</li>
+
+		<li>
+			<span>{{ Lang::get('page.contact_email') }}</span>
+			{{ HTML::mailto($user->profile->contact_email) }}
+		</li>
+	</ul>
 
 @stop
 
