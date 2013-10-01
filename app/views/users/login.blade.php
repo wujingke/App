@@ -36,6 +36,7 @@
 		<ul class="nice-tabs">
 			<li><a href="{{ URL::to('signup') }}">{{ Lang::get('page.signup') }}</a></li>
 			<li class="active"><a href="{{ URL::to('login') }}">{{ Lang::get('page.login') }}</a></li>
+			<li><a href="{{ URL::to('session/forgot_password') }}">{{ Lang::get('page.forgot_password') }}</a></li>
 		</ul>
 
 	</div>

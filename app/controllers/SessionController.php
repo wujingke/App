@@ -46,4 +46,9 @@ class SessionController extends BaseController {
 		return Redirect::to('/');
 	}
 
+	public function reminderCreate()
+	{
+		return View::make('users.reminder');
+	}
+
 }
