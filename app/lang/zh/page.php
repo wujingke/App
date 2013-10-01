@@ -59,5 +59,6 @@ return array(
 	'password_incorrect'           => '密码不对',
 	'username'                     => '用户名',
 	'email'                        => '邮箱',
+	'register_email'               => '注册邮箱',
 	
 );

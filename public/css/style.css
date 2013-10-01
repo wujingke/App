@@ -433,10 +433,10 @@ span.error {
 	text-align: center;
 	padding: 12px 0;
 }
-.edit-password, .edit-profile, .create-user, .create-session {
+.edit-password, .edit-profile, .create-user, .create-session, .create-reminder {
 	padding: 20px 120px 20px 40px;
 }
-.edit-password li, .edit-profile li, .create-user li.field, .create-session li {
+.edit-password li, .edit-profile li, .create-user li.field, .create-session li, .create-reminder li {
 	text-align: right;
 }
 .edit-avatar {
@@ -481,4 +481,16 @@ span.error {
 .cool-error {
 	color: #d04526;
 	font-size: 14px;
+}
+li.custom .wide {
+	width: 65.33333%;
+	float: right;
+}
+li.custom {
+	position: relative;
+	max-width: 100%;
+	margin-bottom: 10px;
+	vertical-align: middle;
+	font-size: 16px;
+	overflow: hidden;
 }

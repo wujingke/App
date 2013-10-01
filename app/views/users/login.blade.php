@@ -16,11 +16,11 @@
 				{{ Form::label('password', Lang::get('page.password'), array('class'=>'inline')) }}
 				{{ Form::password('password', array('class'=>'wide input')) }}
 			</li>
-			<li>
-
-			</li>
-			<li class="text-right">
-				{{ Form::submit(Lang::get('page.login'), array('class'=>'btn-def btn-def-orange')) }}
+			<li class="custom">
+				<div class="wide">
+					<label class="pull_left">{{ Form::checkbox('remember') }}{{ Lang::get('page.remember_me') }}</label>
+					{{ Form::submit(Lang::get('page.login'), array('class'=>'btn-def btn-def-orange')) }}
+				</div>
 			</li>
 
 		{{ Form::close() }}

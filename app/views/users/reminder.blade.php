@@ -9,7 +9,7 @@
 	<ul class="create-reminder">
 		{{ Form::open(array('url'=>'')) }}
 			<li class="field">
-				{{ Form::label('email', Lang::get('page.email'), array('class'=>'inline')) }}
+				{{ Form::label('email', Lang::get('page.register_email'), array('class'=>'inline')) }}
 				{{ Form::text('email', Input::old('email'), array('class'=>'wide input')) }}
 			</li>
 			<li class="text-right">
