@@ -59,7 +59,7 @@
 		$(".trigger-content").click(function() {
 			var userName = $(this).parent().children("a").text();
 			var originTextarea = $("textarea").val();
-			$("textarea").val(originTextarea + ' @' + userName);
+			$("textarea").val(originTextarea + '@' + userName + ' ');
 		});
 	});
 })();
