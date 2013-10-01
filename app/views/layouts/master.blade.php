@@ -39,7 +39,7 @@
     </div>
     <div class="footer">
       <div class="row">
-        <p>&copy; 2013 Sofunny.pw · All rights reserved.</p>
+        <p>&copy; 2013 ampou.com · All rights reserved.</p>
       </div>
     </div>
   </div>
