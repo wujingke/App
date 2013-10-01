@@ -276,6 +276,29 @@ p.joinus {
 .topic-comments, .create-reply {
 	padding: 20px 5%;
 }
+.topic-comments > li {
+	position: relative;
+	padding: 4px 12px 12px 80px;
+	min-height: 80px;
+}
+.topic-comments .meta {
+	font-size: 14px;
+	color: #5c648c;
+	opacity: 0.8;
+}
+.topic-comments span.meta {
+	font-style: italic;
+}
+.mini-avatar {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+}
+.topic-comments .mini-avatar {
+	position: absolute;
+	left: 8px;
+	top: 8px;
+}
 span.error {
 	background-color: #c03d20;
 	color: #fff;

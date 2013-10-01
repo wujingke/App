@@ -16,7 +16,11 @@
 	</div>
 	<ul class="topic-comments">
 		@foreach($topic->replies as $reply)
-			<li>{{ $reply->content }}</li>
+			<li>
+				<span class="mini-avatar">{{ HTML::image($reply->user->profile->avatar_square_url) }}</span>
+				<a href="" class="meta">{{ $reply->user->username }}</a><span class="meta"> {{ Lang::get('page.said') }}</span><span class="timeago meta" date-time="{{ $reply->created_at }}"></span>
+				<div>{{ $reply->content }}</div>
+			</li>
 		@endforeach
 	</ul>
 	<ul class="create-reply">

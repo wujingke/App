@@ -60,5 +60,6 @@ return array(
 	'username'                     => '用户名',
 	'email'                        => '邮箱',
 	'register_email'               => '注册邮箱',
+	'said'                         => '发表于',
 	
 );
