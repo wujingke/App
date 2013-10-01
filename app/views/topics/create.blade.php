@@ -2,6 +2,10 @@
 
 @section('app')
 
+	<div class="nice-notice">
+		{{ $errors->first('node_id', '<p>:message</p>') }}
+	</div>
+
 	<ul class="select-nodes">
 		@foreach($nodes as $node)
 			<li class="{{ (Input::old('node_id') == $node->id) ? 'active' : 'nil' }}"><a data-node-id="{{ $node->id }}" href="{{ URL::to('node/' . $node->pretty) }}">{{ $node->name }}</a></li>
