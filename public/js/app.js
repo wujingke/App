@@ -35,7 +35,12 @@
 		});
 		$(".timeago").timeago();
 		$('#insert-picture').click(function() {
-			
+			var originTextarea = $("textarea").val();
+			$("textarea").val(originTextarea + ' ![Text](Src)');
+		});
+		$('#insert-link').click(function() {
+			var originTextarea = $("textarea").val();
+			$("textarea").val(originTextarea + ' [Text](Link)');
 		});
 		$('#cropbox').Jcrop({
 			aspectRatio: 1,
