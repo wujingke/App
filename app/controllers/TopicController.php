@@ -76,8 +76,9 @@ class TopicController extends BaseController {
 					->withInput();
 			}
 
-			$topic->title   = Input::get('title');
-			$topic->content = Input::get('content');
+			$topic->title        = Input::get('title');
+			$topic->content      = Input::get('content');
+			$topic->content_html = Topic::markdown(e(Input::get('content')));
 			$topic->save();
 		}
 		return Redirect::back()
