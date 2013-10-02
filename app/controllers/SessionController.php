@@ -26,7 +26,7 @@ class SessionController extends BaseController {
 			$user = User::whereUsername(Input::get('username'))->first();
 			
 			if (!$user) {
-				return Redirect::back()
+				return Redirect::to('login')
 					->with('message', Lang::get('page.user_inexistence'))
 					->withInput(Input::except('password'));
 			}
@@ -38,7 +38,7 @@ class SessionController extends BaseController {
 			return Redirect::to('/');
 		}
 
-		return Redirect::back()
+		return Redirect::to('login')
 			->with('message', Lang::get('page.password_incorrect'))
 			->withInput(Input::except('password'));
 	}

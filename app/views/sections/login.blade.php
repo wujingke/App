@@ -5,7 +5,7 @@
       <p class="welcome"><i class="icon-login"></i>{{ Lang::get('page.welcome_back') }}</p>
       <ul>
         <li class="field">
-          {{ Form::text('email', '', array('class'=>'input', 'placeholder'=>Lang::get('page.email_or_username'), 'autocomplete'=>'off')) }}
+          {{ Form::text('username', '', array('class'=>'input', 'placeholder'=>Lang::get('page.email_or_username'), 'autocomplete'=>'off')) }}
         </li>
         <li class="field">
           {{ Form::password('password', array('class'=>'input', 'placeholder'=>Lang::get('page.password'), 'autocomplete'=>'off')) }}
@@ -18,11 +18,6 @@
           {{ Form::submit(Lang::get('page.login'), array('class'=>'btn-def btn-def-orange pull_right')) }}
         </li>
       </ul>
-      <ul class="three_up tiles text-center third-part-login">
-      <!-- <li><a href=""><i class="icon-sina-weibo"></i></a></li>
-      <li><a href=""><i class="icon-qq"></i></a></li>
-      <li><a href=""><i class="icon-github"></i></a></li>-->  
-    </ul>
     {{ Form::close() }}
   </div>
 </div>
