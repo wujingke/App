@@ -2,6 +2,13 @@
 
 class UserController extends BaseController {
 
+	public function __construct()
+	{
+		$this->beforeFilter('auth', array('except'=>array('create', 'store', 'show')));
+
+		$this->beforeFilter('csrf', array('on'=>'post'));
+	}
+
 	public function edit()
 	{
 		return View::make('users.edit');

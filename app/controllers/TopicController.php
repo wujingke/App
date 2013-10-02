@@ -2,6 +2,15 @@
 
 class TopicController extends BaseController {
 
+	public function __construct()
+	{
+		$this->beforeFilter('auth', array('except'=>array('index', 'show')));
+
+		$this->beforeFilter('csrf', array('on'=>'post'));
+
+		$this->afterFilter('log', array('except'=>array('index', 'show')));
+	}
+
 	public function index()
 	{
 		return View::make('topics.index')

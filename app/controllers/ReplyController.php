@@ -2,6 +2,13 @@
 
 class ReplyController extends BaseController {
 
+	public function __construct()
+	{
+		$this->beforeFilter('auth');
+
+		$this->beforeFilter('csrf', array('on'=>'post'));
+	}
+
 	public function store()
 	{
 		$v = Reply::validate(Input::all());
