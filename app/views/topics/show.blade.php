@@ -10,7 +10,7 @@
 		{{ $topic->content_html }}
 	</div>
 	<div class="topic-data">
-		<span><i class="icon-comment"></i>6</span>
+		<span><i class="icon-comment"></i>{{ $topic->replies->count() }}</span>
 		<span><i class="icon-eye"></i>5</span>
 		<span><i class="icon-clock"></i><span class="timeago" date-time="{{ $topic->created_at }}"></span></span>
 	</div>

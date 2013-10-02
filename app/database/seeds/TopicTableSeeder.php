@@ -17,64 +17,21 @@ class TopicTableSeeder extends Seeder {
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
             ),
-            array(
-                'user_id'    => 2,
-                'node_id'    => 1,
-                'title'      => 'Busker Topic Title',
-                'content'    => 'Busker 说这里是一个温暖的小社区',
-                'content_html' => '',
-                'created_at' => new DateTime,
-                'updated_at' => new DateTime,
-            ),
-            array(
-                'user_id'    => 3,
-                'node_id'    => 1,
-                'title'      => 'Matz Topic Title',
-                'content'    => 'Matz 说这里是一个温暖的小社区',
-                'content_html' => '',
-                'created_at' => new DateTime,
-                'updated_at' => new DateTime,
-            ),
-            array(
-                'user_id'    => 3,
-                'node_id'    => 1,
-                'title'      => 'Matz@2.0 Topic Title',
-                'content'    => 'Matz@2.0 说这里是一个温暖的小社区',
-                'content_html' => '',
-                'created_at' => new DateTime,
-                'updated_at' => new DateTime,
-            ),
 		);
 
         $replies = array(
             array(
-                'user_id'    => 3,
+                'user_id'    => 1,
                 'topic_id'   => 1,
                 'content'    => 'Some Comment',
                 'content_html' => '',
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
             ),
-            array(
-                'user_id'    => 3,
-                'topic_id'   => 1,
-                'content'    => 'Some Comment 1',
-                'content_html' => '',
-                'created_at' => new DateTime,
-                'updated_at' => new DateTime,
-            ),
-            array(
-                'user_id'    => 3,
-                'topic_id'   => 1,
-                'content'    => 'Some Comment 2',
-                'content_html' => '',
-                'created_at' => new DateTime,
-                'updated_at' => new DateTime,
-            ),
         );
 
-		DB::table('topics')->insert($topics);
-        DB::table('replies')->insert($replies);
+		//DB::table('topics')->insert($topics);
+        //DB::table('replies')->insert($replies);
 	}
 
 }

@@ -18,7 +18,7 @@
 
 		<li>
 			<span>{{ Lang::get('page.website') }}</span>
-			{{ HTML::link($user->profile->website, $user->profile->website) }}
+			<a href="{{ $user->profile->website }}">{{ $user->profile->website }}</a>
 		</li>
 
 		<li>
@@ -28,7 +28,7 @@
 
 		<li>
 			<span>{{ Lang::get('page.contact_email') }}</span>
-			{{ HTML::mailto($user->profile->contact_email) }}
+			<a href="mailto:{{ $user->profile->contact_email }}">{{ $user->profile->contact_email }}</a>
 		</li>
 	</ul>
 
