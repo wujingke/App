@@ -32,9 +32,9 @@ class UserController extends BaseController {
 	public function store()
 	{
 		$v = Validator::make(Input::all(), array(
-			'username' => 'required|alpha_num|unique:users|min:4',
+			'username' => 'required|alpha_dash|unique:users|min:4|max:32',
 			'email'    => 'required|email|unique:users',
-			'password' => 'required|alpha_dash|min:6|max:16',
+			'password' => 'required|alpha_dash|between:6,16',
 		));
 
 		if ($v->fails()) {
@@ -50,6 +50,10 @@ class UserController extends BaseController {
 		$user->password = Hash::make(Input::get('password'));
 
 		if ($user->save()) {
+
+			$profile = new Profile;
+			$profile = $user->profile()->save($profile);
+
 			Auth::login($user);
 			return Redirect::to('/')
 				->with('suggestion', '');

@@ -10,13 +10,13 @@ class CreateProfilesTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('user_id');
-			$table->string('nickname');
-			$table->string('location');
-			$table->string('website');
-			$table->string('company');
-			$table->string('avatar_url');
-			$table->string('contact_email');
-			$table->string('avatar_square_url');
+			$table->string('nickname')->nullable();
+			$table->string('location')->nullable();
+			$table->string('website')->nullable();
+			$table->string('company')->nullable();
+			$table->string('avatar_url')->default('avatars/user.d.png');
+			$table->string('contact_email')->nullable();
+			$table->string('avatar_square_url')->default('avatars/user.d.s128.png');
 			$table->timestamps();
 		});
 	}

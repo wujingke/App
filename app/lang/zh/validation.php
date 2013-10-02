@@ -6,7 +6,7 @@ return array(
     "active_url"       => ":attribute 不是一个有效的链接",
     "after"            => ":attribute必须是一个在 :date之后的日期",
     "alpha"            => ":attribute只能由字母组成",
-    "alpha_dash"       => ":attribute只能由字母、数字或 '-' 组成",
+    "alpha_dash"       => ":attribute只能由字母／数字／下划线组成",
     "alpha_num"        => ":attribute只能由字母和数字组成",
     "before"           => ":attribute必须是一个在 :date之前的日期",
     "between"          => array(

@@ -2,8 +2,8 @@
 
 return array(
 
-	'previous' => '<i class="icon-right-open"></i>',
+	'previous' => '',
 
-	'next'     => 'dg',
+	'next'     => '',
 
 );
