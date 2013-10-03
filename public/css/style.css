@@ -347,10 +347,6 @@ span.error {
 .profile-form {
 	padding: 40px 8%;
 }
-.site-data {
-	color: #eb8142;
-	font-weight: bold;
-}
 .users-roles > p {
 	font-weight: bold;
 	color: #eb8142;
@@ -563,4 +559,15 @@ span.plus {
 span.plus:hover {
 	background-color: #f8f8f8;
 	border: 1px solid #cdcdcd;
+}
+ul.status {
+	padding: 20px 20px;
+}
+ul.status > li {
+	border-left: 3px solid #ededed;
+	padding-left: 16px;
+}
+ul.status span, ul.status a {
+	font-size: 14px;
+	color: #5c648c;
 }

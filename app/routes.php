@@ -22,10 +22,6 @@ Route::get('logout', array('uses'=>'SessionController@destroy'));
 
 Route::get('t/{id}', array('as'=>'topic', 'uses'=>'TopicController@show'));
 
-Route::get('~master', array('as'=>'master', 'uses'=>'MasterController@index'));
-
-Route::post('~master/node/store', array('uses'=>'MasterController@nodeStore'));
-
 Route::get('settings', array('uses'=>'UserController@profileIndex'));
 
 Route::get('settings/profile', array('uses'=>'UserController@profileEdit'));
@@ -75,3 +71,7 @@ Route::get('u/{username}/following', array('as'=>'userFollowing', 'uses'=>'UserC
 Route::get('u/{username}/replies', array('uses'=>'UserController@show'));
 
 Route::post('reply/store', array('uses'=>'ReplyController@store'));
+
+Route::get('~master', array('as'=>'master', 'uses'=>'MasterController@index'));
+
+Route::post('~master/node/store', array('uses'=>'MasterController@nodeStore'));

@@ -63,5 +63,12 @@ return array(
 	'said'                         => '发表于',
 	'edit'                         => '编辑',
 	'finish'                       => '完成',
+	'user'                         => '用户',
+	'feedback'                     => '问题反馈',
+	'help'                         => '帮助',
+	'contact'                      => '联系',
+	'site_t'                       => '本站第 ',
+	'o_user'                       => ' 位居民',
+	'add_node'                     => '添加分类',
 
 );
