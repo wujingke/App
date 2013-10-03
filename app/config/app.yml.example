@@ -1,0 +1,15 @@
+defaults: &defaults
+
+  admin_emails:
+    - 'fyiorb@gmail.com'
+    - 'suzy@me.io'
+
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
