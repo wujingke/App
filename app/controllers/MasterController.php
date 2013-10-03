@@ -6,8 +6,7 @@ class MasterController extends BaseController {
 
 	public function index()
 	{
-		//return View::make('master.index');
-		return Yaml::parse(app_path() . '/config/app.yml');
+		var_dump($this->isAdmin(Auth::user()));
 	}
 
 	public function nodeStore()
@@ -15,9 +14,10 @@ class MasterController extends BaseController {
 
 	}
 
-	private function isAdmin()
+	private function isAdmin($user)
 	{
-		var_dump(Yaml::parse(app_path() . '/config/app.yml'));
+		$emails = Yaml::parse(app_path() . '/config/app.yml')['defaults']['admin_emails'];
+		return in_array($user->email, $emails);
 	}
 
 }
