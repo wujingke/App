@@ -544,3 +544,23 @@ li.custom {
 	opacity: 1;
 	cursor: pointer;
 }
+span.plus {
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,.04);
+	-moz-box-shadow: 0 1px 0 rgba(0,0,0,.04);
+	-ms-box-shadow: 0 1px 0 rgba(0,0,0,.04);
+	-o-box-shadow: 0 1px 0 rgba(0,0,0,.04);
+	box-shadow: 0 1px 0 rgba(0,0,0,.04);
+	background-color: #fff;
+	border: 1px solid #d0d0d0;
+	padding: 0 8px 0 2px;
+	cursor: pointer;
+}
+span.plus:hover {
+	background-color: #f8f8f8;
+	border: 1px solid #cdcdcd;
+}
