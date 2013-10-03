@@ -62,4 +62,6 @@ return array(
 	'register_email'               => '注册邮箱',
 	'said'                         => '发表于',
 	'edit'                         => '编辑',
+	'finish'                       => '完成',
+
 );

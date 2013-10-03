@@ -56,4 +56,28 @@ class SessionController extends BaseController {
 		return View::make('users.reminder');
 	}
 
+	public function reminderStore()
+	{
+		Mail::pretend();
+
+		return Password::remind(array('email'=>Input::get('email')));
+	}
+
+	public function resetCreate($token)
+	{
+		return View::make('users.password_reset')->with('token', $token);
+	}
+
+	public function resetStore($token)
+	{
+		return Password::reset(array('email'=>Input::get('email')), function($user, $password)
+		{
+			$user->password = Hash::make($password);
+
+			$user->save();
+
+			return Redirect::to('/');
+		});
+	}
+
 }

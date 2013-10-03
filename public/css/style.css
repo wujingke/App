@@ -120,6 +120,10 @@
 .pagination > ul > li > a, .pagination > ul > li > span {
 	display: block;
 	min-width: 32px;
+	color: #5c648c;
+}
+.pagination > ul > li > a:hover {
+
 }
 .topics > li {
 	border-bottom: 1px solid #ededed;
@@ -456,10 +460,10 @@ span.error {
 	text-align: center;
 	padding: 12px 0;
 }
-.edit-password, .edit-profile, .create-user, .create-session, .create-reminder {
+.edit-password, .edit-profile, .create-user, .create-session, .create-reminder, .password-reset {
 	padding: 20px 120px 20px 40px;
 }
-.edit-password li, .edit-profile li, .create-user li.field, .create-session li, .create-reminder li {
+.edit-password li, .edit-profile li, .create-user li.field, .create-session li, .create-reminder li, .password-reset li {
 	text-align: right;
 }
 .edit-avatar {

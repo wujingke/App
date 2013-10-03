@@ -3,11 +3,15 @@
 @section('app')
 
 	<div class="nice-notice">
-		{{ Session::has('message') ? '<p>' . Session::get('message') . '</p>' : '' }}
+		@if (Session::has('error'))
+			<p>{{ trans(Session::get('reason')) }}</p>
+		@elseif (Session::has('success'))
+			<p>{{ Lang::get('page.email_send') }}</p>
+		@endif
 	</div>
 
 	<ul class="create-reminder">
-		{{ Form::open(array('url'=>'')) }}
+		{{ Form::open(array('url'=>'session/forgot_password')) }}
 			<li class="field">
 				{{ Form::label('email', Lang::get('page.register_email'), array('class'=>'inline')) }}
 				{{ Form::text('email', Input::old('email'), array('class'=>'wide input')) }}

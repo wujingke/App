@@ -10,6 +10,12 @@ Route::post('session/store', array('uses'=>'SessionController@store'));
 
 Route::get('session/forgot_password', array('uses'=>'SessionController@reminderCreate'));
 
+Route::post('session/forgot_password', array('uses'=>'SessionController@reminderStore'));
+
+Route::get('password/reset/{token}', array('uses'=>'SessionController@resetCreate'));
+
+Route::post('password/reset/{token}', array('uses'=>'SessionController@resetStore'));
+
 Route::post('user/store', array('uses'=>'UserController@store'));
 
 Route::get('logout', array('uses'=>'SessionController@destroy'));
