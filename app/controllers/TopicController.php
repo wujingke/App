@@ -46,7 +46,7 @@ class TopicController extends BaseController {
 		$topic->node_id      = Input::get('node_id');
 		$topic->title        = Input::get('title');
 		$topic->content      = Input::get('content');
-		$topic->content_html = Topic::markdown(e(Input::get('content')));
+		$topic->content_html = Topic::markdown(Input::get('content'));
 
 		if (!$topic->save()) {
 			return '404';
@@ -87,7 +87,7 @@ class TopicController extends BaseController {
 
 			$topic->title        = Input::get('title');
 			$topic->content      = Input::get('content');
-			$topic->content_html = Topic::markdown(e(Input::get('content')));
+			$topic->content_html = Topic::markdown(Input::get('content'));
 			$topic->save();
 		}
 		return Redirect::back()

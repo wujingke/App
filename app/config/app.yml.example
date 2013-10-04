@@ -1,8 +1,8 @@
 defaults: &defaults
 
   admin_emails:
-    - 'fyiorb@gmail.com'
-    - 'suzy@me.io'
+    - 'master@gmail.com'
+    - 'member@gmail.com'
 
 
 development:
