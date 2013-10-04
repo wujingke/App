@@ -1,13 +1,17 @@
 {
-	"name": "Tracy Perrotta",
+	"name": "App",
 	"description": "App for interest.",
 	"keywords": ["app", "laravel"],
-	"license": "",
+	"license": "MIT",
 	"require": {
+        "php": ">=5.4.0",
 		"laravel/framework": "4.0.*",
-		"michelf/php-markdown": "1.3",
-		"symfony/yaml": "2.4.*"
+		"michelf/php-markdown": "1.3.*@dev",
+		"symfony/yaml": "2.4.*@dev"
 	},
+	"authors": [
+
+	],
 	"autoload": {
 		"classmap": [
 			"app/commands",
