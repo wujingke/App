@@ -4,7 +4,7 @@
 
 	<div class="topic-title">
 		<span><i class="icon-bookmark"></i></span>
-		{{ $topic->title }}
+		{{{ $topic->title }}}
 	</div>
 	<div class="topic-content">
 		{{ $topic->content_html }}
