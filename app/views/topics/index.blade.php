@@ -15,7 +15,7 @@
 				<span>{{ Lang::get('page.slash') }}</span>
 				<span class="timeago" date-time="{{ $topic->created_at }}"></span>
 			</div>
-			<div class="avatar"><img src="https://identicons.github.com/b9757ef68a28f8b5874f00c6805bee43.png"></div>
+			<div class="avatar"><img src="{{ URL::to($topic->user->profile->avatar_square_url) }}"></div>
 		</li>
 		@endforeach
 	</ul>

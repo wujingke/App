@@ -71,5 +71,6 @@ return array(
 	'o_user'                       => ' 位居民',
 	'add_node'                     => '添加分类',
 	'delete'                       => '删除',
+	'topic_frozen'                 => '该话题已被锁定',
 
 );

@@ -14,6 +14,7 @@ class CreateTopicsTable extends Migration {
 			$table->string('title');
 			$table->text('content');
 			$table->text('content_html');
+			$table->boolean('frozen')->default(false);
 			$table->timestamps();
 		});
 	}
