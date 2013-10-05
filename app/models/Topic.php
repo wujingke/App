@@ -2,6 +2,8 @@
 
 class Topic extends BaseModel {
 
+	protected $softDelete = true;
+
 	public static $rules = array(
 		'node_id' => 'required|exists:nodes,id',
 		'title'   => 'required|min:2|max:38',
