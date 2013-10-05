@@ -15,9 +15,8 @@ class TopicController extends BaseController {
 	{
 		return View::make('topics.index')
 			->with('nodes', Node::all())
-			->with('topics', Topic::paginate(3));
+			->with('topics', Topic::orderBy('updated_at', 'desc')->paginate(3));
 	}
-
 
 	public function show($id)
 	{
