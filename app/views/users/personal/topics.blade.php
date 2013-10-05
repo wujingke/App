@@ -7,8 +7,7 @@
 		<li>
 			<a href="{{ URL::route('topic', $topic->id + 2013) }}">{{ $topic->title }}</a>
 			<div class="topic-meta">
-				<a href="{{ URL::to('topic/' . $topic->id) }}">{{ Lang::get('page.edit') }}</a>
-				<span>{{ Lang::get('page.slash') }}</span>
+				@include('sections.owner')
 				<a href="{{ URL::route('topic', $topic->id + 2013) }}">{{ Lang::get('page.discuss') }}(19)</a>
 				<span>{{ Lang::get('page.slash') }}</span>
 				<a href="{{ URL::to('node/' . $topic->node->pretty) }}">{{ $topic->node->name }}</a>

@@ -70,5 +70,6 @@ return array(
 	'site_t'                       => '本站第 ',
 	'o_user'                       => ' 位居民',
 	'add_node'                     => '添加分类',
+	'delete'                       => '删除',
 
 );

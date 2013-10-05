@@ -7,6 +7,8 @@
 			<a href="{{ URL::route('topic', $topic->id + 2013) }}">{{ $topic->title }}</a>
 			<a href="{{ URL::route('topic', $topic->id + 2013) }}" class="pull_right" target="_blank"><i class="icon-export"></i></a>
 			<div class="topic-meta">
+				<a href="{{ URL::to('u/' . $topic->user->username) }}">{{ $topic->user->username }}</a>
+				<span>{{ Lang::get('page.slash') }}</span>
 				<a href="{{ URL::route('topic', $topic->id + 2013) }}">{{ Lang::get('page.discuss') }}(19)</a>
 				<span>{{ Lang::get('page.slash') }}</span>
 				<span class="timeago" date-time="{{ $topic->created_at }}"></span>
