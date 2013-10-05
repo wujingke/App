@@ -72,5 +72,6 @@ return array(
 	'add_node'                     => '添加分类',
 	'delete'                       => '删除',
 	'topic_frozen'                 => '该话题已被锁定',
+	'you'                          => '你',
 
 );

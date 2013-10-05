@@ -25,10 +25,27 @@ class ReplyController extends BaseController {
 		$reply->content      = Input::get('content');
 		$reply->content_html = Clean::htmlawed(Reply::markdown(Input::get('content')));
 
-		$reply->save();
+		if ($reply->save()) {
+			$notification = new Notification;
+			$notification->content = $this->notify($reply, 'reply');
+			$notification->user_id = $reply->topic->user->id;
+			$notification->save();
+		}
 
 		return Redirect::back()
 			->with('message', '');
+	}
+
+	private function notify($reply, $type)
+	{
+		$data = array(
+			'title'    => $reply->topic->title,
+			'content'  => $reply->content,
+			'topicId'  => ($reply->topic->id + 2013),
+			'username' => $reply->user->username
+		);
+
+		return Lang::get('notification.' . $type, $data);
 	}
 
 }
