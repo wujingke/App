@@ -95,9 +95,11 @@ class TopicController extends BaseController {
 
 	public function destroy($id)
 	{
-		if ($this->can(Topic::find(id))) {
-			
+		if (Request::ajax() && $this->can(Topic::find($id))) {
+			Topic::destroy($id);
+			return Response::json(array('success'=>1));
 		}
+		return '503';
 	}
 
 	public function frozenToggle($id)

@@ -80,5 +80,24 @@
 				}
 			});
 		});
+
+		var template = '<div class="nice-notice"><p>删除成功</p></div>';
+
+		$(".action-delete").click(function(e) {
+			e.preventDefault();
+			var toUrl = $(this).attr("href");
+			$.ajax({
+				url: toUrl,
+				type: "DELETE",
+				success: function(data) {
+					if (data.success) {
+						$(".action-delete").parents("li").hide();
+						$(".action-delete").parents("ul").prepend(template);
+					} else {
+
+					}
+				}
+			});
+		});
 	});
 })();
