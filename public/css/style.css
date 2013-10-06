@@ -571,3 +571,10 @@ ul.status span, ul.status a {
 	font-size: 14px;
 	color: #5c648c;
 }
+.action-frozen {
+	color: #aeaeae;
+	cursor: pointer;
+}
+.action-frozen.actived {
+	color: #82b440;
+}

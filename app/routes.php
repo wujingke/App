@@ -54,7 +54,7 @@ Route::get('topic/create', array('uses'=>'TopicController@create'));
 
 Route::put('topic/{id}/update', array('uses'=>'TopicController@update'));
 
-Route::get('topic/{id}/frozen', array('uses'=>'TopicController@frozenToggle'));
+Route::put('topic/{id}/frozen', array('uses'=>'TopicController@frozenToggle'));
 
 Route::delete('topic/{id}', array('uses'=>'TopicController@destroy'));
 

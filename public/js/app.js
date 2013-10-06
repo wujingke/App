@@ -66,5 +66,19 @@
 			var originTextarea = $("textarea").val();
 			$("textarea").val(originTextarea + '@' + userName + ' ');
 		});
+		$(".action-frozen").click(function() {
+			var topicId = $(this).data("tid");
+			$.ajax({
+				url: "/topic/" + topicId + "/frozen",
+				type: "PUT",
+				success: function(data) {
+					if (data.success) {
+						$(".action-frozen").toggleClass("actived");
+					} else {
+
+					}
+				}
+			});
+		});
 	});
 })();

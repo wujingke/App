@@ -9,6 +9,9 @@
 	<div class="topic-title">
 		<span><i class="icon-bookmark"></i></span>
 		{{{ $topic->title }}}
+		@if (Auth::check() && Auth::user()->staff)
+			<span class="pull_right action-frozen {{ $topic->frozen ? 'actived' : 'nil' }}" data-tid="{{ $topic->id }}"><i class="icon-lock"></i></span>
+		@endif
 	</div>
 	<div class="topic-content">
 		{{ $topic->content_html }}

@@ -102,13 +102,18 @@ class TopicController extends BaseController {
 
 	public function frozenToggle($id)
 	{
-		$topic = Topic::find($id);
-		if ($topic && Auth::user()->staff) {
-			$topic->frozen = !$topic->frozen;
-			if ($topic->save()) {
-				return Response::json(array('success'=>1));
+		if (Request::ajax()) {
+
+			$topic = Topic::find($id);
+
+			if ($topic && Auth::user()->staff) {
+				$topic->frozen = !$topic->frozen;
+				if ($topic->save()) {
+					return Response::json(array('success'=>1));
+				}
 			}
 		}
+
 		return Response::json(array('success'=>0));
 	}
 
