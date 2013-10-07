@@ -18,7 +18,7 @@
 	</div>
 	<div class="topic-data">
 		<span><i class="icon-comment"></i>{{ $topic->replies->count() }}</span>
-		<span><i class="icon-eye"></i>5</span>
+		<span class="page-view" data-page-view="{{ URL::to('topic/' . $topic->id . '/count') }}"><i class="icon-eye"></i>1</span>
 		<span><i class="icon-clock"></i><span class="timeago" date-time="{{ $topic->created_at }}"></span></span>
 		<span class="plus pull_right"><i class="icon-heart"></i>8</span>
 	</div>

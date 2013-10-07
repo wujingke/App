@@ -4,7 +4,7 @@ class TopicController extends BaseController {
 
 	public function __construct()
 	{
-		$this->beforeFilter('auth', array('except'=>array('index', 'show')));
+		$this->beforeFilter('auth', array('except'=>array('index', 'show', 'viewCount')));
 
 		$this->beforeFilter('csrf', array('on'=>'post'));
 
@@ -121,7 +121,11 @@ class TopicController extends BaseController {
 
 	public function viewCount($id)
 	{
-		return Redis::incr('topic:' . $id . ':page.view');
+		if (Request::ajax()) {
+			return Response::json(array('page'=>array('view'=>Redis::incr('topic:' . $id . ':page.view'))));
+		}
+
+		return '504';
 	}
 
 	private function can($topic)

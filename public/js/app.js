@@ -99,5 +99,14 @@
 				}
 			});
 		});
+		$(".page-view").each(function() {
+			var toUrl = $(this).data("page-view");
+			$.ajax({
+				url: toUrl,
+				success: function(data) {
+					$(".page-view").html('<i class="icon-eye"></i>' + data.page.view);
+				}
+			});
+		});
 	});
 })();
