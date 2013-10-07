@@ -119,6 +119,11 @@ class TopicController extends BaseController {
 		return Response::json(array('success'=>0));
 	}
 
+	public function viewCount($id)
+	{
+		return Redis::incr('topic:' . $id . ':page.view');
+	}
+
 	private function can($topic)
 	{
 		return ($topic && ($topic->user->id == Auth::user()->id)) ? true : false;

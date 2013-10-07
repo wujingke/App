@@ -62,6 +62,8 @@ Route::post('topic/store', array('uses'=>'TopicController@store'));
 
 Route::get('topic/{id}', array('uses'=>'TopicController@edit'));
 
+Route::get('topic/{id}/count', array('uses'=>'TopicController@viewCount'));
+
 Route::get('u/{username}', array('as'=>'userIndex', 'uses'=>'UserController@show'));
 
 Route::get('u/{username}/topics', array('as'=>'userTopics', 'uses'=>'UserController@show'));
