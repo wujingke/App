@@ -13,4 +13,5 @@ class Relationship extends Eloquent {
 	{
 		return $this->belongsTo('User', 'followed_id');
 	}
+
 }

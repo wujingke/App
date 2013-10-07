@@ -77,3 +77,7 @@ Route::post('reply/store', array('uses'=>'ReplyController@store'));
 Route::get('~master', array('as'=>'master', 'uses'=>'MasterController@index'));
 
 Route::post('~master/node/store', array('uses'=>'MasterController@nodeStore'));
+
+Route::get('user/follow', array('uses'=>'RelationshipController@follow'));
+
+Route::get('user/unfollow', array('uses'=>'RelationshipController@unfollow'));
