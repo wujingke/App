@@ -4,12 +4,20 @@ class RelationshipController extends BaseController {
 
 	public function follow()
 	{
-		return $this->toggle();
+		if (Request::ajax()) {
+			return $this->toggle();
+		}
+
+		return '503';
 	}
 
 	public function unfollow()
 	{
-		return $this->toggle();
+		if (Request::ajax()) {
+			return $this->toggle();
+		}
+
+		return '503';
 	}
 
 	private function toggle()
@@ -18,13 +26,13 @@ class RelationshipController extends BaseController {
 			$relationship = $this->isFollowing(Auth::user(), $this->targetUser());
 			if ($relationship) {
 				$relationship->delete();
-				return Response::json(array('success'=>true, 'relationship'=>'follow'));
+				return Response::json(array('success'=>true, 'relationship'=>Lang::get('page.follow')));
 			} else {
 				$relationship = new Relationship;
 				$relationship->follower_id = Auth::user()->id;
 				$relationship->followed_id = $this->targetUser()->id;
 				$relationship->save();
-				return Response::json(array('success'=>true, 'relationship'=>'unfollow'));
+				return Response::json(array('success'=>true, 'relationship'=>Lang::get('page.unfollow')));
 			}
 		}
 		return Response::json(array('success'=>false));

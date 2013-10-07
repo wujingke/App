@@ -73,5 +73,8 @@ return array(
 	'delete'                       => '删除',
 	'topic_frozen'                 => '该话题已被锁定',
 	'you'                          => '你',
+	'follow'                       => '关注',
+	'unfollow'                     => '取消关注',
+
 
 );

@@ -531,7 +531,10 @@ li.custom {
 }
 .user-info > .nice-avatar {
 	float: right;
-	margin-right: 20px;
+	width: 120px;
+}
+.user-info > .nice-avatar > a {
+	margin-top: 12px;
 }
 .vcard {
 	padding: 20px 20px;
