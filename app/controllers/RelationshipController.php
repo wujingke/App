@@ -14,7 +14,7 @@ class RelationshipController extends BaseController {
 
 	private function toggle()
 	{
-		if ($this->targetUser()) {
+		if ($this->targetUser() && ($this->targetUser()->id != Auth::user()->id)) {
 			$relationship = $this->isFollowing(Auth::user(), $this->targetUser());
 			if ($relationship) {
 				$relationship->delete();
