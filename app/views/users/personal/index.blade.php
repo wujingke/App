@@ -5,7 +5,6 @@
 	<ul class="user-info">
 		<div class="nice-avatar">
 			<span>{{ HTML::image($user->profile->avatar_square_url) }}</span>
-			<a href="{{ URL::to('user/follow?target=' . $user->username) }}" class="btn-def btn-def-orange action-follow">{{ Lang::get('page.follow') }}</a>
 		</div>
 		<li>
 			<span>{{ Lang::get('page.nickname') }}</span>

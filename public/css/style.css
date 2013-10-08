@@ -537,7 +537,31 @@ li.custom {
 	margin-top: 12px;
 }
 .vcard {
-	padding: 20px 20px;
+
+
+}
+.person-status {
+	text-align: center;
+	border-top: 1px solid #ededed;
+}
+.person-status > li span {
+	display: block;
+	font-size: 14px;
+}
+.person-status > li span:first-child {
+	margin-top: 14px;
+	font-weight: bold;
+	font-size: 18px;
+}
+.vcard .nickname {
+	font-size: 18px;
+	font-weight: bold;
+}
+.vcard .username {
+	font-size: 14px;
+}
+.vcard .join-on {
+	font-size: 14px;
 }
 .trigger-content:hover {
 	opacity: 1;
