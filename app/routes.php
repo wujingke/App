@@ -83,3 +83,8 @@ Route::post('~master/node/store', array('uses'=>'MasterController@nodeStore'));
 Route::post('user/follow', array('uses'=>'RelationshipController@follow'));
 
 Route::post('user/unfollow', array('uses'=>'RelationshipController@unfollow'));
+
+App::missing(function($exception)
+{
+	return Response::view('errors.404', array(), 404);
+});

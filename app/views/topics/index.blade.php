@@ -11,7 +11,7 @@
 				<span>{{ Lang::get('page.slash') }}</span>
 				<a href="{{ URL::to('node/' . $topic->node->pretty) }}">{{ $topic->node->name }}</a>
 				<span>{{ Lang::get('page.slash') }}</span>
-				<a href="{{ URL::route('topic', $topic->id + 2013) }}">{{ Lang::get('page.discuss') }}(19)</a>
+				<a href="{{ URL::route('topic', $topic->id + 2013) }}">{{ Lang::get('page.discuss') }}({{ $topic->replies->count() }})</a>
 				<span>{{ Lang::get('page.slash') }}</span>
 				<span class="timeago" date-time="{{ $topic->created_at }}"></span>
 			</div>
