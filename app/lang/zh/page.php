@@ -75,6 +75,7 @@ return array(
 	'you'                          => '你',
 	'follow'                       => '关注',
 	'unfollow'                     => '取消关注',
+	'not_found'                    => '找不到该页面',
 
 
 );
