@@ -20,7 +20,7 @@ Route::post('user/store', array('uses'=>'UserController@store'));
 
 Route::get('logout', array('uses'=>'SessionController@destroy'));
 
-Route::get('t/{id}', array('as'=>'topic', 'uses'=>'TopicController@show'));
+Route::get('t/{id}', array('as'=>'topic', 'uses'=>'TopicController@show'))->where('id', '[0-9]+');
 
 Route::get('settings', array('uses'=>'UserController@profileIndex'));
 
@@ -46,23 +46,23 @@ Route::get('about', array('uses'=>'PageController@about'));
 
 Route::get('wiki', array('uses'=>'PageController@wiki'));
 
-Route::get('node/{pretty}', array('uses'=>'NodeController@index'));
+Route::get('node/{pretty}', array('uses'=>'NodeController@index'))->where('name', '[A-Za-z]+');
 
 Route::get('notification', array('uses'=>'NotificationController@index'));
 
 Route::get('topic/create', array('uses'=>'TopicController@create'));
 
-Route::put('topic/{id}/update', array('uses'=>'TopicController@update'));
+Route::put('topic/{id}/update', array('uses'=>'TopicController@update'))->where('id', '[0-9]+');
 
-Route::put('topic/{id}/frozen', array('uses'=>'TopicController@frozenToggle'));
+Route::put('topic/{id}/frozen', array('uses'=>'TopicController@frozenToggle'))->where('id', '[0-9]+');
 
-Route::delete('topic/{id}', array('uses'=>'TopicController@destroy'));
+Route::delete('topic/{id}', array('uses'=>'TopicController@destroy'))->where('id', '[0-9]+');
 
 Route::post('topic/store', array('uses'=>'TopicController@store'));
 
-Route::get('topic/{id}', array('uses'=>'TopicController@edit'));
+Route::get('topic/{id}', array('uses'=>'TopicController@edit'))->where('id', '[0-9]+');
 
-Route::get('topic/{id}/count', array('uses'=>'TopicController@viewCount'));
+Route::get('topic/{id}/count', array('uses'=>'TopicController@viewCount'))->where('id', '[0-9]+');
 
 Route::get('u/{username}', array('as'=>'userIndex', 'uses'=>'UserController@show'));
 
