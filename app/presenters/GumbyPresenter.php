@@ -57,7 +57,8 @@ class GumbyPresenter {
             $content = $this->getPageSlider();
         }
 
-        return $this->getPrevious().$content.$this->getNext();
+        //return $this->getPrevious().$content.$this->getNext();
+        return $content;
     }
 
     /**
@@ -169,7 +170,7 @@ class GumbyPresenter {
      * @param  string  $text
      * @return string
      */
-    public function getPrevious($text = '&laquo;')
+    public function getPrevious($text = '<i class="icon-left-open"></i>')
     {
         // If the current page is less than or equal to one, it means we can't go any
         // further back in the pages, so we will render a disabled previous button
@@ -192,7 +193,7 @@ class GumbyPresenter {
      * @param  string  $text
      * @return string
      */
-    public function getNext($text = '&raquo;')
+    public function getNext($text = '<i class="icon-right-open"></i>')
     {
         // If the current page is greater than or equal to the last page, it means we
         // can't go any further into the pages, as we're already on this last page

@@ -165,29 +165,47 @@ li.custom {
 .user-info > .nice-avatar > a {
 	margin-top: 12px;
 }
-.person-status {
+
+
+
+
+
+.vcard > .user-status {
 	text-align: center;
 	border-top: 1px solid #ededed;
+	padding-top: 10px;
 }
-.person-status > li span {
+
+.vcard > .user-status > li > a {
+	font-size: 22px;
+	line-height: 36px;
+	color: #5c648c;
+	opacity: 0.7;
+}
+.vcard > .user-status > li > a:hover {
+	opacity: 0.9;
+}
+.vcard > .user-status > li > a > span {
 	display: block;
 	font-size: 14px;
+	line-height: 20px;
+	color: #546673;
+	opacity: 0.7;
 }
-.person-status > li span:first-child {
-	margin-top: 14px;
-	font-weight: bold;
-	font-size: 18px;
+.vcard > .info {
+	padding-left: 140px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	position: relative;
+	color: #727272;
 }
-.vcard .nickname {
-	font-size: 18px;
-	font-weight: bold;
+.vcard > .info > .nice-avatar {
+	position: absolute;
+	left: 28px;
+	top: 20px;
 }
-.vcard .username {
-	font-size: 14px;
-}
-.vcard .join-on {
-	font-size: 14px;
-}
+
+
 .trigger-content:hover {
 	opacity: 1;
 	cursor: pointer;
