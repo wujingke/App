@@ -1,1 +1,3 @@
-//= require_tree .
+//= require jquery
+//= require_directory plugins
+//= require_directory coffee
