@@ -91,6 +91,6 @@ App::missing(function($exception)
 
 Route::get('env', function() {
 	//return App::environment();
-	var_dump(javascript_include_tag());
+	//var_dump(javascript_include_tag());
 	//var_dump(HTML::script('assets/application.js'));
 });
