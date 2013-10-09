@@ -28,7 +28,7 @@ class UserController extends BaseController {
 				->with('user', $user);
 		}
 
-		return View::make('users.user_not_found');
+		return App::abort(404);
 	}
 
 	public function create()
