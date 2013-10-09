@@ -1,12 +1,12 @@
 (function() {
 	$(document).ready(function() {
 		var canClose = true;
-		var updateCoords = function(c) {
-			$('#x').val(c.x);
-			$('#y').val(c.y);
-			$('#w').val(c.w);
-			$('#h').val(c.h);
-		};
+		// var updateCoords = function(c) {
+		// 	$('#x').val(c.x);
+		// 	$('#y').val(c.y);
+		// 	$('#w').val(c.w);
+		// 	$('#h').val(c.h);
+		// };
 
 		$(".login>a").click(function(e) {
 			e.preventDefault();
@@ -33,7 +33,7 @@
 			var nodeId = $(this).children("a").data("node-id");
 			$("#nodeId").attr("value", nodeId);
 		});
-		$(".timeago").timeago();
+		//$(".timeago").timeago();
 		$('#insert-picture').click(function() {
 			var originTextarea = $("textarea").val();
 			$("textarea").val(originTextarea + ' ![Text](Src)');
@@ -42,10 +42,10 @@
 			var originTextarea = $("textarea").val();
 			$("textarea").val(originTextarea + ' [Text](Link)');
 		});
-		$('#cropbox').Jcrop({
-			aspectRatio: 1,
-			onSelect: updateCoords
-		});
+		// $('#cropbox').Jcrop({
+		// 	aspectRatio: 1,
+		// 	onSelect: updateCoords
+		// });
 		$(".nice-avatar>form>input:submit").click(function(e) {
 			var avatarPath = $(".open-file").val();
 			if (avatarPath.length == 0) {
