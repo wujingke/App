@@ -1,4 +1,5 @@
 /**
  *= require gumby
  *= require_directory plugins
+ *= require_directory sass
  */
