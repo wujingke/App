@@ -2,7 +2,11 @@
 
 @section('app')
 
-
+	<ul>
+		@foreach($user->followers as $follower)
+			<li><span class="mini-avatar">{{ HTML::image($follower->profile->avatar_square_url) }}</span></li>
+		@endforeach
+	</ul>
 
 @stop
 
