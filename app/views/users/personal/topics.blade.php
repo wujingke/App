@@ -15,6 +15,7 @@
 				<span class="timeago" date-time="{{ $topic->created_at }}"></span>
 			</div>
 			<div class="avatar">{{ HTML::image($user->profile->avatar_square_url) }}</div>
+			<div class="hover ajax"></div>
 		</li>
 		@endforeach
 	</ul>

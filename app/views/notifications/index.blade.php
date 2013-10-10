@@ -2,7 +2,7 @@
 
 @section('app')
 
-	<ul>
+	<ul class="notifications">
 		@foreach($notifications as $notification)
 			<li>{{ $notification->content }}</li>
 		@endforeach

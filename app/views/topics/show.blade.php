@@ -10,17 +10,27 @@
 		<span><i class="icon-bookmark"></i></span>
 		{{{ $topic->title }}}
 		@if (Auth::check() && Auth::user()->staff)
-			<span class="pull_right action-frozen {{ $topic->frozen ? 'actived' : 'nil' }}" data-tid="{{ $topic->id }}"><i class="icon-lock"></i></span>
+			<span class="pull_right action-frozen {{ $topic->frozen ? 'actived' : 'nil' }}" data-url="{{ URL::to('topic/' . $topic->id . '/frozen') }}"><i class="icon-lock"></i></span>
 		@endif
+		<div class="hover ajax"></div>
 	</div>
 	<div class="topic-content">
 		{{ $topic->content_html }}
 	</div>
 	<div class="topic-data">
-		<span><i class="icon-comment"></i>{{ $topic->replies->count() }}</span>
-		<span class="page-view" data-page-view="{{ URL::to('topic/' . $topic->id . '/count') }}"><i class="icon-eye"></i>1</span>
-		<span><i class="icon-clock"></i><span class="timeago" date-time="{{ $topic->created_at }}"></span></span>
-		<span class="plus pull_right"><i class="icon-heart"></i>8</span>
+		<span>
+			<i class="icon-comment"></i><span>{{ $topic->replies->count() }}</span>
+		</span>
+		<span class="page-view" data-url="{{ URL::to('topic/' . $topic->id . '/count') }}">
+			<i class="icon-eye"></i><span></span>
+		</span>
+		<span>
+			<i class="icon-clock"></i><span class="timeago" date-time="{{ $topic->created_at }}"></span>
+		</span>
+		<span class="pull_right like" data-url="{{ URL::to('topic/' . $topic->id . '/like') }}">
+			<span>12</span>
+			<i class="icon-heart"></i>
+		</span>
 	</div>
 	<ul class="topic-comments">
 		@foreach($topic->replies as $reply)

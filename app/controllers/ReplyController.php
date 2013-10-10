@@ -31,9 +31,12 @@ class ReplyController extends BaseController {
 			// $notification->user_id = $reply->topic->user->id;
 			// $notification->save();
 
-			foreach ($this->ats() as $user) {
-				
-			}
+			// Redis::pipeline(function($pipe)
+			// {
+			// 	foreach ($this->ats() as $user) {
+
+			// 	}
+			// }
 		}
 
 		return Redirect::back()

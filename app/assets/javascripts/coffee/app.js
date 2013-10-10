@@ -66,48 +66,9 @@
 			var originTextarea = $("textarea").val();
 			$("textarea").val(originTextarea + '@' + userName + ' ');
 		});
-		$(".action-frozen").click(function() {
-			var topicId = $(this).data("tid");
-			$.ajax({
-				url: "/topic/" + topicId + "/frozen",
-				type: "PUT",
-				success: function(data) {
-					if (data.success) {
-						$(".action-frozen").toggleClass("actived");
-					} else {
 
-					}
-				}
-			});
-		});
 
-		var template = '<div class="nice-notice"><p>删除成功</p></div>';
 
-		$(".action-delete").click(function(e) {
-			e.preventDefault();
-			var toUrl = $(this).attr("href");
-			$.ajax({
-				url: toUrl,
-				type: "DELETE",
-				success: function(data) {
-					if (data.success) {
-						$(".action-delete").parents("li").hide();
-						$(".action-delete").parents("ul").prepend(template);
-					} else {
-
-					}
-				}
-			});
-		});
-		$(".page-view").each(function() {
-			var toUrl = $(this).data("page-view");
-			$.ajax({
-				url: toUrl,
-				success: function(data) {
-					$(".page-view").html('<i class="icon-eye"></i>' + data.page.view);
-				}
-			});
-		});
 		$("a.action-follow").click(function(e) {
 			e.preventDefault();
 			var thisA = $(this);

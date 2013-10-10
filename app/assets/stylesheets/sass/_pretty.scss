@@ -250,7 +250,24 @@ p.welcome {
 	}
 }
 
+.notifications {
+	> li {
+		border-bottom: 1px solid #ededed;
+		padding: 4px 5%;
+	}
+	p {
+		font-size: 14px;
+		line-height: 32px;
+		margin: 0;
+		&:first-child {
+			font-size: 14px;
+			font-weight: bold;
+		}
+	}
+}
+
 .topic-title {
+	position: relative;
 	border-bottom: 1px solid #ededed;
 	padding: 20px 5%;
 	font-size: 20px;
