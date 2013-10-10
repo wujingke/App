@@ -44,3 +44,11 @@ $(document).ready ->
   $('.like').click ->
   	me = $(this)
   	me.toggleClass 'done'
+  	$.ajax
+  		url: me.data('url')
+  		type: 'POST'
+  		data:
+  			_token: me.data('token')
+  		success: (data) ->
+  			if data.success
+  				me.children('span').text(data.likes)

@@ -133,9 +133,24 @@ class TopicController extends BaseController {
 		return '504';
 	}
 
+	public function like($id)
+	{
+		if (Request::ajax() && ($id <= DB::table('topics')->count())) {
+			Redis::sismember('topic:' . $id . ':likes', Auth::user()->id)
+				? Redis::srem('topic:' . $id . ':likes', Auth::user()->id)
+				: Redis::sadd('topic:' . $id . ':likes', Auth::user()->id);
+		}
+		return Response::json(array('success'=>true, 'likes'=>$this->likeCount($id)));
+	}
+
 	private function can($topic)
 	{
 		return ($topic && ($topic->user->id == Auth::user()->id)) ? true : false;
+	}
+
+	private function likeCount($id)
+	{
+		return Redis::scard('topic:' . $id . ':likes');
 	}
 
 }

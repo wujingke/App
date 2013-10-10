@@ -64,6 +64,8 @@ Route::get('topic/{id}', array('uses'=>'TopicController@edit'))->where('id', '[0
 
 Route::get('topic/{id}/count', array('uses'=>'TopicController@viewCount'))->where('id', '[0-9]+');
 
+Route::post('topic/{id}/like', array('uses'=>'TopicController@like'))->where('id', '[0-9]+');
+
 Route::get('u/{username}', array('as'=>'userIndex', 'uses'=>'UserController@show'));
 
 Route::get('u/{username}/topics', array('as'=>'userTopics', 'uses'=>'UserController@show'));
@@ -89,8 +91,11 @@ App::missing(function($exception)
 	return Response::view('errors.404', array(), 404);
 });
 
-Route::get('env', function() {
+Route::get('env/{id}', function($id) {
 	//return App::environment();
 	//var_dump(javascript_include_tag());
 	//var_dump(HTML::script('assets/application.js'));
-});
+	//return DB::table('topics')->count();
+	var_dump($id <= DB::table('topics')->count());
+
+})->where('id', '[0-9]+');
