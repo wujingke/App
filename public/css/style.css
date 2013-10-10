@@ -262,3 +262,17 @@ span.like.done > i {
 	color: #dd1144;
 	opacity: 0.72;
 }
+a.follow {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	background-color: #f9f9f9;
+	border: 1px solid #f8f8f8;
+	box-shadow: 0 1px 4px rgba(0,0,0,0.28);
+	color: #606e67;
+	padding: 4px 12px;
+	position: relative;
+	bottom: -8px;
+}

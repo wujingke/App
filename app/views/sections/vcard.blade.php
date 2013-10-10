@@ -2,8 +2,10 @@
 
 	<ul class="info">
 		<li>{{ $topic->user->profile->nickname }}@{{ $topic->user->username }}</li>
-		<li>Japan</li>
-		<li>2013-12-12 加入</li>
+		<li>{{ $topic->user->profile->location }}</li>
+		<li>
+			<a href="{{ URL::to('user/follow?target=' . $topic->user->username) }}" class="follow">{{ $is_following ? Lang::get('page.unfollow') : Lang::get('page.follow') }}</a>
+		</li>
 		<li class="nice-avatar">
 			<span>{{ HTML::image($topic->user->profile->avatar_square_url) }}</span>
 		</li>
@@ -21,6 +23,3 @@
 	</ul>
 
 </div>
-
-
-<!-- <a href="{{ URL::to('user/follow?target=' . $topic->user->username) }}" class="btn-def btn-def-orange action-follow">{{ Lang::get('page.follow') }}</a> -->

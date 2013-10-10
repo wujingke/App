@@ -27,8 +27,8 @@
 		<span>
 			<i class="icon-clock"></i><span class="timeago" date-time="{{ $topic->created_at }}"></span>
 		</span>
-		<span class="pull_right like done" data-token="{{ csrf_token() }}" data-url="{{ URL::to('topic/' . $topic->id . '/like') }}">
-			<span></span>
+		<span class="pull_right like {{ $liked ? 'done' : 'nil' }}" data-token="{{ csrf_token() }}" data-url="{{ URL::to('topic/' . $topic->id . '/like') }}">
+			<span>{{ $likes }}</span>
 			<i class="icon-heart"></i>
 		</span>
 	</div>

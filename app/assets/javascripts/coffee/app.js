@@ -67,23 +67,5 @@
 			$("textarea").val(originTextarea + '@' + userName + ' ');
 		});
 
-
-
-		$("a.action-follow").click(function(e) {
-			e.preventDefault();
-			var thisA = $(this);
-			var toUrl = thisA.attr("href");
-			$.ajax({
-				url: toUrl,
-				type: "POST",
-				success: function(data) {
-					if (data.success) {
-						thisA.text(data.relationship);
-					} else {
-						
-					}
-				}
-			});
-		});
 	});
 })();

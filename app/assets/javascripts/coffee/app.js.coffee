@@ -52,3 +52,13 @@ $(document).ready ->
   		success: (data) ->
   			if data.success
   				me.children('span').text(data.likes)
+
+  $('a.follow').click (e) ->
+  	e.preventDefault()
+  	me = $(this)
+  	$.ajax
+  		url: me.attr('href')
+  		type: 'POST'
+  		success: (data) ->
+  			if data.success
+  				me.text data.relationship

@@ -20,10 +20,15 @@ class TopicController extends BaseController {
 
 	public function show($id)
 	{
-		$topic = Topic::find($id - 2013);
+		$id = $id - 2013;
+
+		$topic = Topic::find($id);
 
 		if ($topic) {
 			return View::make('topics.show')
+				->with('likes', $this->likeCount($id))
+				->with('liked', Auth::check() ? $this->liked($id) : false)
+				->with('is_following', Auth::check() ? $this->isFollowing($topic->user) : false)
 				->with('topic', $topic);
 		}
 
@@ -136,7 +141,7 @@ class TopicController extends BaseController {
 	public function like($id)
 	{
 		if (Request::ajax() && ($id <= DB::table('topics')->count())) {
-			Redis::sismember('topic:' . $id . ':likes', Auth::user()->id)
+			$this->liked($id)
 				? Redis::srem('topic:' . $id . ':likes', Auth::user()->id)
 				: Redis::sadd('topic:' . $id . ':likes', Auth::user()->id);
 		}
@@ -151,6 +156,20 @@ class TopicController extends BaseController {
 	private function likeCount($id)
 	{
 		return Redis::scard('topic:' . $id . ':likes');
+	}
+
+	private function liked($id)
+	{
+		return Redis::sismember('topic:' . $id . ':likes', Auth::user()->id);
+	}
+
+	private function isFollowing($user)
+	{
+		$relationship = Relationship::whereFollowed_id($user->id)
+			->whereFollower_id(Auth::user()->id)
+			->first();
+
+		return $relationship ? true : false;
 	}
 
 }
