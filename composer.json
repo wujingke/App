@@ -10,6 +10,9 @@
 		"symfony/yaml": "2.4.*@dev",
 		"matteo/clean": "1.0.*@dev"
 	},
+	"require-dev": {
+
+	},
 	"authors": [
 
 	],

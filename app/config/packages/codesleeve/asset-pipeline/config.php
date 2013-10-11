@@ -107,7 +107,7 @@ return array(
 	| set to 'production' but false otherwise
 	|
 	*/
-	'cache' => null,
+	'cache' => true,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -124,6 +124,6 @@ return array(
 	| set to 'production' but false otherwise
 	|
 	*/
-	'concat' => null
+	'concat' => true,
 
 );
