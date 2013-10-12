@@ -115,8 +115,6 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Matteo\Clean\CleanServiceProvider',
 		'Codesleeve\AssetPipeline\AssetPipelineServiceProvider',
-		'Way\Console\GuardLaravelServiceProvider',
-
 	),
 
 	/*
@@ -182,7 +180,6 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Clean'           => 'Matteo\Clean\Facades\CleanFacade',
-
 	),
 
 );
