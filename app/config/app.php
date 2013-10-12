@@ -114,7 +114,6 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Matteo\Clean\CleanServiceProvider',
-		'Codesleeve\AssetPipeline\AssetPipelineServiceProvider',
 	),
 
 	/*
