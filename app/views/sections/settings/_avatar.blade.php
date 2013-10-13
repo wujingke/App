@@ -1,5 +1,21 @@
 <ul class="nice-tabs">
-	<li><a href="{{ URL::to('settings/profile') }}">{{ Lang::get('page.my_profile') }}</a></li>
-	<li class="active"><a href="{{ URL::to('settings/avatar') }}">{{ Lang::get('page.update_avatar') }}</a></li>
-	<li><a href="{{ URL::to('settings/password') }}">{{ Lang::get('page.edit_password') }}</a></li>
+
+    <li>
+        <a href="{{ URL::to('settings/profile') }}">
+            {{ Lang::get('user.auth.profile') }}
+        </a>
+    </li>
+
+    <li class="active">
+        <a href="{{ URL::to('settings/avatar') }}">
+            {{ Lang::get('user.auth.avatar') }}
+        </a>
+    </li>
+
+    <li>
+        <a href="{{ URL::to('settings/password') }}">
+            {{ Lang::get('user.auth.password') }}
+        </a>
+    </li>
+
 </ul>

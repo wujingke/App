@@ -17,6 +17,7 @@
                     @if(Auth::check())
                     <li><a href="{{ URL::to('u/' . Auth::user()->username) }}">{{ Auth::user()->username }}</a></li>
                     <li><a href="{{ URL::to('settings') }}">{{ Lang::get('user.settings') }}</a></li>
+                    <li><a href="{{ URL::to('notification') }}">{{ Lang::get('user.notify') }}</a></li>
                     <li><a href="{{ URL::to('logout') }}">{{ Lang::get('user.logout') }}</a></li>
                     @else
                     <li><a href="{{ URL::to('signup') }}">{{ Lang::get('user.signup') }}</a></li>

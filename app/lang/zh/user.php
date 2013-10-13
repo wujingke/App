@@ -15,4 +15,16 @@ return array(
     "login"     => "登录",
 
     "logout"    => "退出",
+
+    "notify"    => "通知",
+
+    "auth"      => array(
+
+        "profile"  => "我的资料",
+
+        "avatar"   => "更新头像",
+
+        "password" => "修改密码",
+
+    ),
 );
