@@ -34,33 +34,33 @@ return array(
 
     'user_following'               => '关注的人',
 
-	'file_unsupported'             => '暂不支持此文件类型',
-	
+    'file_unsupported'             => '暂不支持此文件类型',
+
     'user_inexistence'             => '该用户不存在',
 
     'register_email'               => '注册邮箱',
 
     'password_incorrect'           => '密码不对',
-	
-	'said'                         => '发表于',
-	
+
+    'said'                         => '发表于',
+
     'edit'                         => '编辑',
-	
+
     'finish'                       => '完成',
-	
+
     'user'                         => '用户',
-	
+
     'feedback'                     => '问题反馈',
-	
+
     'help'                         => '帮助',
-	
+
     'contact'                      => '联系',
-	
+
     'delete'                       => '删除',
-	
+
     'topic_frozen'                 => '该话题已被锁定',
-	
-	'follow'                       => '关注',
+
+    'follow'                       => '关注',
 
     'unfollow'                     => '取消关注',
 
