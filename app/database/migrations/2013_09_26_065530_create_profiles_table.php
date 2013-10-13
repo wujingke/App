@@ -25,5 +25,4 @@ class CreateProfilesTable extends Migration {
 	{
 		Schema::drop('profiles');
 	}
-
 }

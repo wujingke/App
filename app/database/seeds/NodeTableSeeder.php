@@ -2,11 +2,11 @@
 
 class NodeTableSeeder extends Seeder {
 
-	public function run()
-	{
+    public function run()
+    {
         DB::table('nodes')->delete();
 
-		$nodes = array(
+        $nodes = array(
             array(
                 'name'       => '旅游',
                 'pretty'     => 'travel',
@@ -29,5 +29,4 @@ class NodeTableSeeder extends Seeder {
 
 		DB::table('nodes')->insert($nodes);
 	}
-
 }

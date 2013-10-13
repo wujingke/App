@@ -21,5 +21,4 @@ class CreateRepliesTable extends Migration {
 	{
 		Schema::drop('replies');
 	}
-
 }

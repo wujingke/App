@@ -19,5 +19,4 @@ class CreateNodesTable extends Migration {
 	{
 		Schema::drop('nodes');
 	}
-
 }

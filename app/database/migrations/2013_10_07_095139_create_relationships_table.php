@@ -18,5 +18,4 @@ class CreateRelationshipsTable extends Migration {
 	{
 		Schema::drop('relationships');
 	}
-
 }
