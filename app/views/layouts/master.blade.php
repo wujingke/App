@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title></title>
+  <title>Title</title>
   <link rel="stylesheet" type="text/css" href="http://me:9292/assets/application.css">
   <script type="text/javascript" src="http://me:9292/assets/application.js"></script>
 </head>

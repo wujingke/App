@@ -114,6 +114,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Matteo\Clean\CleanServiceProvider',
+		'Fitztrev\LaravelHtmlMinify\LaravelHtmlMinifyServiceProvider',
 	),
 
 	/*

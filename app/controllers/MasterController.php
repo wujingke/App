@@ -12,14 +12,16 @@ class MasterController extends BaseController {
 
 		$this->beforeFilter(function() {
 			if (!$this->isAdmin(Auth::user())) {
-				return '501';
+				//return '501';
+				return Yaml::parse(app_path() . '/config/app.yml')['defaults']['assets_url'];
 			}
 		});
 	}
 
 	public function index()
 	{
-		var_dump($this->isAdmin(Auth::user()));
+		//var_dump($this->isAdmin(Auth::user()));
+
 	}
 
 	private function isAdmin($user)

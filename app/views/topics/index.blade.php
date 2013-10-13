@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('app')
+	
 	<ul class="topics">
 		@foreach($topics as $topic)
 		<li>

@@ -100,6 +100,10 @@ Route::get('env/{id}', function($id) {
 
 })->where('id', '[0-9]+');
 
+Route::get('url', function() {
+
+});
+
 
 // App::error(function($exception, $code)
 // {
