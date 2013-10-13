@@ -1,10 +1,12 @@
 <?php
 
-Route::get('/', array('uses'=>'TopicController@index'));
-
-Route::get('login', array('uses'=>'SessionController@create'));
+Route::get('/', array('as'=>'home', 'uses'=>'TopicController@index'));
 
 Route::get('signup', array('uses'=>'UserController@create'));
+
+Route::post('user/store', array('uses'=>'UserController@store'));
+
+Route::get('login', array('uses'=>'SessionController@create'));
 
 Route::post('session/store', array('uses'=>'SessionController@store'));
 
@@ -16,11 +18,7 @@ Route::get('password/reset/{token}', array('uses'=>'SessionController@resetCreat
 
 Route::post('password/reset/{token}', array('uses'=>'SessionController@resetStore'));
 
-Route::post('user/store', array('uses'=>'UserController@store'));
-
 Route::get('logout', array('uses'=>'SessionController@destroy'));
-
-Route::get('t/{id}', array('as'=>'topic', 'uses'=>'TopicController@show'))->where('id', '[0-9]+');
 
 Route::get('settings', array('uses'=>'UserController@profileIndex'));
 
@@ -38,17 +36,11 @@ Route::post('settings/avatar', array('uses'=>'UserController@updateAvatar'));
 
 Route::post('settings/avatar/upload', array('uses'=>'UserController@uploadAvatar'));
 
-Route::get('~users', array('uses'=>'PageController@users'));
-
-Route::get('~sites', array('uses'=>'PageController@sites'));
-
-Route::get('about', array('uses'=>'PageController@about'));
-
-Route::get('wiki', array('uses'=>'PageController@wiki'));
-
-Route::get('node/{pretty}', array('uses'=>'NodeController@index'))->where('name', '[A-Za-z]+');
+Route::get('node/{pretty}', array('uses'=>'NodeController@index'))->where('name', '[\-A-Za-z]+');
 
 Route::get('notification', array('uses'=>'NotificationController@index'));
+
+Route::get('t/{id}', array('as'=>'topic', 'uses'=>'TopicController@show'))->where('id', '[0-9]+');
 
 Route::get('topic/create', array('uses'=>'TopicController@create'));
 
@@ -78,47 +70,36 @@ Route::get('u/{username}/replies', array('uses'=>'UserController@show'));
 
 Route::post('reply/store', array('uses'=>'ReplyController@store'));
 
-Route::get('~master', array('as'=>'master', 'uses'=>'MasterController@index'));
-
-Route::post('~master/node/store', array('uses'=>'MasterController@nodeStore'));
-
 Route::post('user/follow', array('uses'=>'RelationshipController@follow'));
 
 Route::post('user/unfollow', array('uses'=>'RelationshipController@unfollow'));
 
 App::missing(function($exception)
 {
-	return Response::view('errors.404', array(), 404);
+    return Response::view('errors.404', array(), 404);
 });
 
-Route::get('env/{id}', function($id) {
-	//return App::environment();
-	//var_dump(javascript_include_tag());
-	//var_dump(HTML::script('assets/application.js'));
-	//return DB::table('topics')->count();
-	var_dump($id <= DB::table('topics')->count());
-
-})->where('id', '[0-9]+');
-
-Route::get('url', function() {
-
+App::error(function($exception, $code)
+{
+    switch ($code) {
+        case '403':
+            return Response::view('errors.403', array(), 403);
+            break;
+        
+        default:
+            return Response::view('errors.500', array(), 500);
+            break;
+    }
 });
 
+Route::get('~master', array('as'=>'master', 'uses'=>'MasterController@index'));
 
-// App::error(function($exception, $code)
-// {
-//     switch ($code)
-//     {
-//         case 403:
-//             return Response::view('errors.403', array(), 403);
+Route::post('~master/node/store', array('uses'=>'MasterController@nodeStore'));
 
-//         case 404:
-//             return Response::view('errors.404', array(), 404);
+Route::get('~users', array('uses'=>'PageController@users'));
 
-//         case 500:
-//             return Response::view('errors.500', array(), 500);
+Route::get('~sites', array('uses'=>'PageController@sites'));
 
-//         default:
-//             return Response::view('errors.default', array(), $code);
-//     }
-// });
+Route::get('about', array('uses'=>'PageController@about'));
+
+Route::get('wiki', array('uses'=>'PageController@wiki'));
