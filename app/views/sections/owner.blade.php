@@ -2,16 +2,16 @@
 
 	<a href="{{ URL::to('topic/' . $topic->id) }}">
 
-		{{ Lang::get('page.edit') }}
+		{{ Lang::get('app.edit') }}
 
 	</a>
 
-	<span>{{ Lang::get('page.slash') }}</span>
+	<span>{{ Lang::get('app.slash') }}</span>
 
 	<a href="{{ URL::to('topic/' . $topic->id) }}" class="action-delete">
-		{{ Lang::get('page.delete') }}
+		{{ Lang::get('app.delete') }}
 	</a>
 
-	<span>{{ Lang::get('page.slash') }}</span>
+	<span>{{ Lang::get('app.slash') }}</span>
 
 @endif
