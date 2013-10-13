@@ -62,7 +62,7 @@ class UserController extends BaseController {
 			$profile = $user->profile()->save($profile);
 
 			Auth::login($user);
-			return Redirect::to('/')
+			return Redirect::home()
 				->with('suggestion', '');
 		}
 

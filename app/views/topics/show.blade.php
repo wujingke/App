@@ -52,7 +52,7 @@
 	<li>
 		<span class="mini-avatar">{{ HTML::image($reply->user->profile->avatar_square_url) }}</span>
 		<a href="" class="meta">{{ $reply->user->username }}</a>
-		<span class="meta"> {{ Lang::get('page.said') }}</span>
+		<span class="meta"> {{ Lang::get('app.said') }}</span>
 		<span class="timeago meta" date-time="{{ $reply->created_at }}"></span>
 		<span class="meta pull_right trigger-content"><i class="icon-reply"></i></span>
 

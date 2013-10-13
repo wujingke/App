@@ -79,18 +79,18 @@ App::missing(function($exception)
     return Response::view('errors.404', array(), 404);
 });
 
-App::error(function($exception, $code)
-{
-    switch ($code) {
-        case '403':
-            return Response::view('errors.403', array(), 403);
-            break;
+// App::error(function($exception, $code)
+// {
+//     switch ($code) {
+//         case '403':
+//             return Response::view('errors.403', array(), 403);
+//             break;
         
-        default:
-            return Response::view('errors.500', array(), 500);
-            break;
-    }
-});
+//         default:
+//             return Response::view('errors.500', array(), 500);
+//             break;
+//     }
+// });
 
 Route::get('~master', array('as'=>'master', 'uses'=>'MasterController@index'));
 

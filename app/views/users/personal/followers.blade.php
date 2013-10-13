@@ -30,7 +30,7 @@
 
         <li>
             <a href="{{ URL::route('userTopics', $user->username) }}">
-                {{ Lang::get('page.user_topics') }}
+                {{ Lang::get('app.user_topics') }}
             </a>
         </li>
 
