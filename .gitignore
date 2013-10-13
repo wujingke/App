@@ -1,8 +1,8 @@
 /bootstrap/compiled.php
-/app/database/development.sqlite
-/vendor
+/app/database/*.sqlite
 /app/config/app.yml
 composer.phar
 composer.lock
 .DS_Store
 dump.rdb
+/vendor
