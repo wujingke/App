@@ -33,12 +33,14 @@ class ReplyController extends BaseController {
                 $notification->save();
             }
 
-            foreach ($this->ats() as $user) {
-                if (Auth::user()->id != $user->id) {
-                    $notification = new Notification;
-                    $notification->content = $this->notify($reply, 'at');
-                    $notification->user_id = $user->id;
-                    $notification->save();
+            if ($this->ats()) {
+                foreach ($this->ats() as $user) {
+                    if (Auth::user()->id != $user->id) {
+                        $notification = new Notification;
+                        $notification->content = $this->notify($reply, 'at');
+                        $notification->user_id = $user->id;
+                        $notification->save();
+                    }
                 }
             }
         }

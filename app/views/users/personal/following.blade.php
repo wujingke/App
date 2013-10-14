@@ -2,12 +2,18 @@
 
 @section('app')
 
-<ul>
+<div class="nice-notice">
+
+
+
+</div>
+
+<ul class="users">
 
     @foreach($user->following as $followed)
 
     <li>
-        <span class="mini-avatar">
+        <span class="avatar">
             {{ HTML::image($followed->profile->avatar_square_url) }}
         </span>
     </li>

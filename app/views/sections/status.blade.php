@@ -1,19 +1,19 @@
 <ul class="status">
 
     <li>
-        <span>{{ Lang::get('page.topic') }}(10)</span>
-        <span>{{ Lang::get('page.slash') }}</span>
-        <span>{{ Lang::get('page.node') }}({{ $nodes->count() }})</span>
-        <span>{{ Lang::get('page.slash') }}</span>
-        <span>{{ Lang::get('page.user') }}(123)</span>
+        <span>{{ Lang::get('app.topic') }}(10)</span>
+        <span>{{ Lang::get('app.slash') }}</span>
+        <span>{{ Lang::get('app.node') }}({{ $nodes->count() }})</span>
+        <span>{{ Lang::get('app.slash') }}</span>
+        <span>{{ Lang::get('app.user') }}(123)</span>
     </li>
 
     <li>
-        <a href="{{ URL::to('help') }}">{{ Lang::get('page.help') }}</a>
-        <span>{{ Lang::get('page.slash') }}</span>
-        <a href="{{ URL::to('contact') }}">{{ Lang::get('page.contact') }}</a>
-        <span>{{ Lang::get('page.slash') }}</span>
-        <a href="{{ URL::to('feedback') }}">{{ Lang::get('page.feedback') }}</a>
+        <a href="{{ URL::to('help') }}">{{ Lang::get('app.help') }}</a>
+        <span>{{ Lang::get('app.slash') }}</span>
+        <a href="{{ URL::to('contact') }}">{{ Lang::get('app.contact') }}</a>
+        <span>{{ Lang::get('app.slash') }}</span>
+        <a href="{{ URL::to('feedback') }}">{{ Lang::get('app.feedback') }}</a>
     </li>
 
 </ul>

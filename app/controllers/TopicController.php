@@ -26,10 +26,10 @@ class TopicController extends BaseController {
 
         if ($topic) {
             return View::make('topics.show')
-                ->with('page_view', Redis::incr('topic:' . $id . ':page.view'))
+                ->with('page_view', $this->pageView($id))
                 ->with('likes', $this->likeCount($id))
                 ->with('liked', Auth::check() ? $this->liked($id) : false)
-                ->with('is_following', Auth::check() ? $this->isFollowing($topic->user) : false)
+
                 ->with('topic', $topic);
         }
 
@@ -144,6 +144,11 @@ class TopicController extends BaseController {
     private function can($topic)
     {
         return ($topic && ($topic->user->id == Auth::user()->id)) ? true : false;
+    }
+
+    private function pageVIew($id)
+    {
+        return Redis::incr('topic:' . $id . ':page.view');
     }
 
     private function likeCount($id)

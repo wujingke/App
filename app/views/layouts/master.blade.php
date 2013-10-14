@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{{ Session::has('title') ? Session::get('title') : Lang::get('site.title') }}</title>
+    <title>{{ Lang::get('site.title') }}</title>
     <link media="all" type="text/css" rel="stylesheet" href="http://me:9292/assets/application.css">
     <script src="http://me:9292/assets/application.js"></script>
 </head>

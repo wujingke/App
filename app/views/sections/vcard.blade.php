@@ -8,7 +8,7 @@
 
         <li>
             <a href="{{ URL::to('user/follow?target=' . $topic->user->username) }}" class="follow">
-                {{ $is_following ? Lang::get('page.unfollow') : Lang::get('page.follow') }}
+                {{ Lang::get('app.follow') }}
             </a>
         </li>
 
