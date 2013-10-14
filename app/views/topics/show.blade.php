@@ -34,8 +34,8 @@
 	<span>
 		<i class="icon-comment"></i><span>{{ $topic->replies->count() }}</span>
 	</span>
-	<span class="page-view" data-url="{{ URL::to('topic/' . $topic->id . '/count') }}">
-		<i class="icon-eye"></i><span></span>
+	<span>
+		<i class="icon-eye"></i><span>{{ $page_view }}</span>
 	</span>
 	<span>
 		<i class="icon-clock"></i><span class="timeago" date-time="{{ $topic->created_at }}"></span>

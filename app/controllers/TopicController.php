@@ -2,174 +2,167 @@
 
 class TopicController extends BaseController {
 
-	public function __construct()
-	{
-		$this->beforeFilter('auth', array('except'=>array('index', 'show', 'viewCount')));
+    public function __construct()
+    {
+        $this->beforeFilter('auth', array('except'=>array('index', 'show', 'viewCount')));
 
-		$this->beforeFilter('csrf', array('on'=>'post'));
+        $this->beforeFilter('csrf', array('on'=>'post'));
 
-		$this->afterFilter('log', array('except'=>array('index', 'show')));
-	}
+        $this->afterFilter('log', array('except'=>array('index', 'show')));
+    }
 
-	public function index()
-	{
-		return View::make('topics.index')
-			->with('nodes', Node::all())
-			->with('topics', Topic::orderBy('updated_at', 'desc')->paginate(3));
-	}
+    public function index()
+    {
+        return View::make('topics.index')
+            ->with('nodes', Node::all())
+            ->with('topics', Topic::orderBy('updated_at', 'desc')->paginate(3));
+    }
 
-	public function show($id)
-	{
-		$id = $id - 2013;
+    public function show($id)
+    {
+        $id = $id - 2013;
 
-		$topic = Topic::find($id);
+        $topic = Topic::find($id);
 
-		if ($topic) {
-			return View::make('topics.show')
-				->with('likes', $this->likeCount($id))
-				->with('liked', Auth::check() ? $this->liked($id) : false)
-				->with('is_following', Auth::check() ? $this->isFollowing($topic->user) : false)
-				->with('topic', $topic);
-		}
+        if ($topic) {
+            return View::make('topics.show')
+                ->with('page_view', Redis::incr('topic:' . $id . ':page.view'))
+                ->with('likes', $this->likeCount($id))
+                ->with('liked', Auth::check() ? $this->liked($id) : false)
+                ->with('is_following', Auth::check() ? $this->isFollowing($topic->user) : false)
+                ->with('topic', $topic);
+        }
 
-		return App::abort(404);
-	}
 
-	public function create()
-	{
-		return View::make('topics.create')
-			->with('nodes', Node::all());
-	}
+        return App::abort(404);
+    }
 
-	public function store()
-	{
-		$v = Topic::validate(Input::all());
-		if ($v->fails()) {
-			return Redirect::back()
-				->withErrors($v)
-				->withInput();
-		}
+    public function create()
+    {
+        return View::make('topics.create')
+            ->with('nodes', Node::all());
+    }
 
-		$topic = new Topic;
-		$topic->user_id      = Auth::user()->id;
-		$topic->node_id      = Input::get('node_id');
-		$topic->title        = Input::get('title');
-		$topic->content      = Input::get('content');
-		$topic->content_html = Clean::htmlawed(Topic::markdown(Input::get('content')));
+    public function store()
+    {
+        $v = Topic::validate(Input::all());
+        if ($v->fails()) {
+            return Redirect::back()
+                ->withErrors($v)
+                ->withInput();
+        }
 
-		if (!$topic->save()) {
-			return '404';
-		}
+        $topic = new Topic;
+        $topic->user_id      = Auth::user()->id;
+        $topic->node_id      = Input::get('node_id');
+        $topic->title        = Input::get('title');
+        $topic->content      = Input::get('content');
+        $topic->content_html = Clean::htmlawed(Topic::markdown(Input::get('content')));
 
-		return Redirect::to('t/' . ($topic->id + 2013));
-	}
+        if (!$topic->save()) {
+            return '404';
+        }
 
-	public function edit($id)
-	{
-		$topic = Topic::find($id);
+        return Redirect::to('t/' . ($topic->id + 2013));
+    }
 
-		if (!$this->can($topic)) {
-			return '503';
-		}
-		return View::make('topics.edit')
-			->with('topic', $topic)
-			->with('nodes', Node::all());
-	}
+    public function edit($id)
+    {
+        $topic = Topic::find($id);
 
-	public function update($id)
-	{
-		$topic = Topic::find($id);
-		
-		if ($this->can($topic)) {
+        if (!$this->can($topic)) {
+            return '503';
+        }
+        return View::make('topics.edit')
+            ->with('topic', $topic)
+            ->with('nodes', Node::all());
+    }
 
-			$v = Topic::validate(array(
-				'node_id' => $topic->node_id,
-				'title'   => Input::get('title'),
-				'content' => Input::get('content')
-			));
+    public function update($id)
+    {
+        $topic = Topic::find($id);
+        
+        if ($this->can($topic)) {
 
-			if ($v->fails()) {
-				return Redirect::back()
-					->withErrors($v)
-					->withInput();
-			}
+            $v = Topic::validate(array(
+                'node_id' => $topic->node_id,
+                'title'   => Input::get('title'),
+                'content' => Input::get('content')
+            ));
 
-			$topic->title        = Input::get('title');
-			$topic->content      = Input::get('content');
-			$topic->content_html = Clean::htmlawed(Topic::markdown(Input::get('content')));
-			$topic->save();
-		}
-		return Redirect::back()
-			->with('message', Lang::get('page.update_successfully'));
-	}
+            if ($v->fails()) {
+                return Redirect::back()
+                    ->withErrors($v)
+                    ->withInput();
+            }
 
-	public function destroy($id)
-	{
-		if (Request::ajax() && $this->can(Topic::find($id))) {
-			Topic::destroy($id);
-			return Response::json(array('success'=>1));
-		}
-		return '503';
-	}
+            $topic->title        = Input::get('title');
+            $topic->content      = Input::get('content');
+            $topic->content_html = Clean::htmlawed(Topic::markdown(Input::get('content')));
+            $topic->save();
+        }
+        return Redirect::back()
+            ->with('message', Lang::get('page.update_successfully'));
+    }
 
-	public function frozenToggle($id)
-	{
-		if (Request::ajax()) {
+    public function destroy($id)
+    {
+        if (Request::ajax() && $this->can(Topic::find($id))) {
+            Topic::destroy($id);
+            return Response::json(array('success'=>1));
+        }
+        return '503';
+    }
 
-			$topic = Topic::find($id);
+    public function frozenToggle($id)
+    {
+        if (Request::ajax()) {
 
-			if ($topic && Auth::user()->staff) {
-				$topic->frozen = !$topic->frozen;
-				if ($topic->save()) {
-					return Response::json(array('success'=>1));
-				}
-			}
-		}
+            $topic = Topic::find($id);
 
-		return Response::json(array('success'=>0));
-	}
+            if ($topic && Auth::user()->staff) {
+                $topic->frozen = !$topic->frozen;
+                if ($topic->save()) {
+                    return Response::json(array('success'=>1));
+                }
+            }
+        }
 
-	public function viewCount($id)
-	{
-		if (Request::ajax()) {
-			return Response::json(array('page'=>array('view'=>Redis::incr('topic:' . $id . ':page.view'))));
-		}
+        return Response::json(array('success'=>0));
+    }
 
-		return '504';
-	}
+    public function like($id)
+    {
+        if (Request::ajax() && ($id <= DB::table('topics')->count())) {
+            $this->liked($id)
+                ? Redis::srem('topic:' . $id . ':likes', Auth::user()->id)
+                : Redis::sadd('topic:' . $id . ':likes', Auth::user()->id);
+        }
+        return Response::json(array('success'=>true, 'likes'=>$this->likeCount($id)));
+    }
 
-	public function like($id)
-	{
-		if (Request::ajax() && ($id <= DB::table('topics')->count())) {
-			$this->liked($id)
-				? Redis::srem('topic:' . $id . ':likes', Auth::user()->id)
-				: Redis::sadd('topic:' . $id . ':likes', Auth::user()->id);
-		}
-		return Response::json(array('success'=>true, 'likes'=>$this->likeCount($id)));
-	}
+    private function can($topic)
+    {
+        return ($topic && ($topic->user->id == Auth::user()->id)) ? true : false;
+    }
 
-	private function can($topic)
-	{
-		return ($topic && ($topic->user->id == Auth::user()->id)) ? true : false;
-	}
+    private function likeCount($id)
+    {
+        return Redis::scard('topic:' . $id . ':likes');
+    }
 
-	private function likeCount($id)
-	{
-		return Redis::scard('topic:' . $id . ':likes');
-	}
+    private function liked($id)
+    {
+        return Redis::sismember('topic:' . $id . ':likes', Auth::user()->id);
+    }
 
-	private function liked($id)
-	{
-		return Redis::sismember('topic:' . $id . ':likes', Auth::user()->id);
-	}
+    private function isFollowing($user)
+    {
+        $relationship = Relationship::whereFollowed_id($user->id)
+            ->whereFollower_id(Auth::user()->id)
+            ->first();
 
-	private function isFollowing($user)
-	{
-		$relationship = Relationship::whereFollowed_id($user->id)
-			->whereFollower_id(Auth::user()->id)
-			->first();
-
-		return $relationship ? true : false;
-	}
+        return $relationship ? true : false;
+    }
 
 }
