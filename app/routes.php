@@ -70,9 +70,11 @@ Route::get('u/{username}/replies', array('uses'=>'UserController@show'));
 
 Route::post('reply/store', array('uses'=>'ReplyController@store'));
 
-Route::post('user/follow', array('uses'=>'RelationshipController@follow'));
+Route::post('user/follow', array('uses'=>'RelationshipController@toggle'));
 
-Route::post('user/unfollow', array('uses'=>'RelationshipController@unfollow'));
+Route::post('user/unfollow', array('uses'=>'RelationshipController@toggle'));
+
+Route::get('user/relationship/{username}', array('uses'=>'RelationshipController@relationship'));
 
 App::missing(function($exception)
 {

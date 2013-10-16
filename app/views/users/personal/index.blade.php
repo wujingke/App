@@ -8,6 +8,8 @@
 
         <span>{{ HTML::image($user->profile->avatar_square_url) }}</span>
 
+        @include('sections.relationship')
+
     </div>
 
     <li>

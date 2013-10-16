@@ -2,57 +2,94 @@
 
 class RelationshipController extends BaseController {
 
-	public function follow()
+	public function toggle()
 	{
 		if (Request::ajax()) {
-			return $this->toggle();
-		}
 
-		return '503';
-	}
+			$username = Input::has('target') ? Input::get('target') : '';
 
-	public function unfollow()
-	{
-		if (Request::ajax()) {
-			return $this->toggle();
-		}
+			$user = User::whereUsername($username)->first();
 
-		return '503';
-	}
+			if ($user && Auth::check()) {
 
-	private function toggle()
-	{
-		if ($this->targetUser() && ($this->targetUser()->id != Auth::user()->id)) {
-			$relationship = $this->isFollowing(Auth::user(), $this->targetUser());
-			if ($relationship) {
-				$relationship->delete();
-				return Response::json(array('success'=>true, 'relationship'=>Lang::get('page.follow')));
-			} else {
+				if ($this->is_following($user)) {
+
+					$relationship = Relationship::whereFollowed_id($user->id)
+						->whereFollower_id(Auth::user()->id)->first();
+					if ($relationship) {
+						$relationship->delete();
+					}
+
+					$this->unfollow($user);
+					return Response::json(array('to'=>Lang::get('app.follow'), 'url'=>URL::to('user/follow?target=' . $user->username)));
+				}
+
 				$relationship = new Relationship;
+				$relationship->followed_id = $user->id;
 				$relationship->follower_id = Auth::user()->id;
-				$relationship->followed_id = $this->targetUser()->id;
 				$relationship->save();
-				return Response::json(array('success'=>true, 'relationship'=>Lang::get('page.unfollow')));
+
+				$this->follow($user);
+				return Response::json(array('to'=>Lang::get('app.unfollow'), 'url'=>URL::to('user/unfollow?target=' . $user->username)));
 			}
+
 		}
-		return Response::json(array('success'=>false));
+
+		App::abort(404, 'Page not found');
 	}
 
-	private function targetUser()
+	public function relationship($username)
 	{
-		if (Input::has('target')) {
-			$user = User::whereUsername(Input::get('target'))->first();
-			return $user ? $user : false;
+
+		$user = User::whereUsername($username)->first();
+
+		if ($user && Request::ajax() && Auth::check()) {
+
+			if ($user->id != Auth::user()->id) {
+
+				if ($this->is_following($user)) {
+
+					return Response::json(array('to'=>Lang::get('app.unfollow'), 'url'=>URL::to('user/unfollow?target=' . $user->username)));
+				}
+
+				return Response::json(array('to'=>Lang::get('app.follow'), 'url'=>URL::to('user/follow?target=' . $user->username)));
+			}
+
+			return Response::json(array('to'=>Lang::get('app.edit'), 'url'=>URL::to('settings')));
 		}
-		return false;
+
+		App::abort(404, 'Page not found');
 	}
 
-	private function isFollowing($authUser, $targetUser)
+	private function follow($user)
 	{
-		$relationship = Relationship::whereFollower_id($authUser->id)
-			->whereFollowed_id($targetUser->id)
-			->first();
-		return $relationship ? $relationship : false;
+		Redis::sadd('user:' . $user->id . ':followers', Auth::user()->id);
+		Redis::sadd('user:' . Auth::user()->id . ':following', $user->id);
 	}
 
+	private function unfollow($user)
+	{
+		Redis::srem('user:' . $user->id . ':followers', Auth::user()->id);
+		Redis::srem('user:' . Auth::user()->id . ':following', $user->id);
+	}
+
+	private function is_following($user)
+	{
+		return Redis::sismember('user:' . Auth::user()->id . ':following', $user->id);
+	}
+
+	private function is_followed_by($user)
+	{
+		return Redis::sismember('user:' . Auth::user()->id . ':followers', $user->id);
+	}
+
+	private function followers_count($user)
+	{
+		return Redis::scard('user:' . $user->id . ':followers');
+	}
+
+	private function following_count($user)
+	{
+		return Redis::scard('user:' . $user->id . ':following');
+	}
 }

@@ -6,16 +6,24 @@
 
         <li>{{ $topic->user->profile->location }}</li>
 
-        <li>
-            <a href="{{ URL::to('user/follow?target=' . $topic->user->username) }}" class="follow">
-                {{ Lang::get('app.follow') }}
-            </a>
-        </li>
-
         <li class="nice-avatar">
 
             <span>{{ HTML::image($topic->user->profile->avatar_square_url) }}</span>
 
+        </li>
+
+        <li>
+            <div class="relationship">
+
+                @if (Auth::check())
+                    <a class="follow" href="{{ URL::to('user/relationship/' . $topic->user->username) }}">
+                        {{ Lang::get('app.follow') }}
+                    </a>
+                @else
+                    <a class="follow" href="{{ URL::to('login') }}">{{ Lang::get('app.follow') }}</a>
+                @endif
+
+            </div>
         </li>
 
     </ul>
