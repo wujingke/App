@@ -21,9 +21,26 @@ class ReplyController extends BaseController {
         return App::abort(404, 'Page not found');
     }
 
-    public function update()
+    public function update($id)
     {
+        $reply = Reply::find($id);
 
+        $content = (Input::has('content') && (Input::get('content') != ''))
+            ? Input::get('content')
+            : '> ';
+
+        $content_html = Clean::htmlawed(Reply::markdown($content));
+
+        if ($reply && ($reply->user->id == Auth::user()->id)) {
+            $reply->content = $content;
+            $reply->content_html = $content_html;
+            
+            if ($reply->save()) {
+                return Response::json(array('content_html'=>$content_html, 'success'=>true));
+            }
+        }
+
+        return Response::json(array('success'=>false));
     }
 
     public function store()

@@ -72,6 +72,8 @@ Route::post('reply/store', array('uses'=>'ReplyController@store'));
 
 Route::get('reply/{id}', array('uses'=>'ReplyController@edit'));
 
+Route::put('reply/{id}', array('uses'=>'ReplyController@update'));
+
 Route::post('user/follow', array('uses'=>'RelationshipController@toggle'));
 
 Route::post('user/unfollow', array('uses'=>'RelationshipController@toggle'));
