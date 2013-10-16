@@ -15,7 +15,7 @@ class TopicController extends BaseController {
     {
         return View::make('topics.index')
             ->with('nodes', Node::all())
-            ->with('topics', Topic::orderBy('updated_at', 'desc')->paginate(3));
+            ->with('topics', Topic::orderBy('updated_at', 'desc')->paginate(12));
     }
 
     public function show($id)
@@ -61,6 +61,8 @@ class TopicController extends BaseController {
         if (!$topic->save()) {
             return '404';
         }
+
+        Redis::incr('site.topics');
 
         return Redirect::to('t/' . ($topic->id + 2013));
     }

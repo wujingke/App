@@ -12,6 +12,8 @@
 
 </ul>
 
+{{ $notifications->links() }}
+
 @stop
 
 @section('sidebar')

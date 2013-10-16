@@ -61,6 +61,8 @@ class UserController extends BaseController {
 			$profile = new Profile;
 			$profile = $user->profile()->save($profile);
 
+			Redis::incr('site.users');
+
 			Auth::login($user);
 			return Redirect::home()
 				->with('suggestion', '');

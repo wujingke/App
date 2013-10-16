@@ -4,7 +4,7 @@
 
 @if($topic->frozen)
 
-	<div class="nice-notice"><p>{{ Lang::get('page.topic_frozen') }}</p></div>
+	<div class="nice-notice"><p>{{ Lang::get('app.topic_frozen') }}</p></div>
 
 @endif
 

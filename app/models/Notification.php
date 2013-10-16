@@ -6,4 +6,11 @@ class Notification extends Eloquent {
     {
         return $this->belongsTo('User');
     }
+
+    public function scopeNewest($query)
+    {
+        return $query->where('user_id', '=', Auth::user()->id)
+            ->orderBy('created_at', 'DESC')
+            ->take(20);
+    }
 }

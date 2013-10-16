@@ -1,11 +1,11 @@
 <ul class="status">
 
     <li>
-        <span>{{ Lang::get('app.topic') }}(10)</span>
+        <span>{{ Lang::get('app.topic') }}({{ Redis::get('site.topics') }})</span>
         <span>{{ Lang::get('app.slash') }}</span>
         <span>{{ Lang::get('app.node') }}({{ $nodes->count() }})</span>
         <span>{{ Lang::get('app.slash') }}</span>
-        <span>{{ Lang::get('app.user') }}(123)</span>
+        <span>{{ Lang::get('app.user') }}({{ Redis::get('site.users') }})</span>
     </li>
 
     <li>
