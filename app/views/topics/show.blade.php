@@ -40,7 +40,7 @@
 	<span>
 		<i class="icon-clock"></i><span class="timeago" date-time="{{ $topic->created_at }}"></span>
 	</span>
-	<span class="pull_right like {{ $liked ? 'done' : 'nil' }}" data-token="{{ csrf_token() }}" data-url="{{ URL::to('topic/' . $topic->id . '/like') }}">
+	<span class="pull_right like {{ $liked ? 'done' : 'nil' }}" data-auth="{{ Auth::check() ? 1 : 0 }}" data-token="{{ csrf_token() }}" data-url="{{ URL::to('topic/' . $topic->id . '/like') }}">
 		<span>{{ $likes }}</span>
 		<i class="icon-heart"></i>
 	</span>

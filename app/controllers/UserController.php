@@ -94,11 +94,11 @@ class UserController extends BaseController {
 			Auth::user()->save();
 
 			return Redirect::back()
-				->with('message', Lang::get('page.update_successfully'));
+				->with('message', Lang::get('app.update_successfully'));
 		}
 
 		return Redirect::back()
-			->with('message', Lang::get('page.current_password_incorrect'));
+			->with('message', Lang::get('app.current_password_incorrect'));
 	}
 
 	public function profileIndex()
@@ -125,7 +125,7 @@ class UserController extends BaseController {
 		$profile->save();
 
 		return Redirect::back()
-			->with('message', Lang::get('page.update_successfully'));
+			->with('message', Lang::get('app.update_successfully'));
 	}
 
 	public function editAvatar()
@@ -141,7 +141,7 @@ class UserController extends BaseController {
 
 		if ($v->fails()) {
 			return Redirect::back()
-				->with('message', Lang::get('page.file_unsupported'));
+				->with('message', Lang::get('app.file_unsupported'));
 		}
 
 		$avatarFileName = sha1(str_random(40)) . '.' . $avatarFile->getClientOriginalExtension();
@@ -192,7 +192,7 @@ class UserController extends BaseController {
 		}
 
 		return Redirect::back()
-			->with('message', Lang::get('page.update_successfully'));
+			->with('message', Lang::get('app.update_successfully'));
 	}
 
 	private function generateAvatar($src, $position, $size)

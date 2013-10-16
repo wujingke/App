@@ -29,7 +29,6 @@ class TopicController extends BaseController {
                 ->with('page_view', $this->pageView($id))
                 ->with('likes', $this->likeCount($id))
                 ->with('liked', Auth::check() ? $this->liked($id) : false)
-
                 ->with('topic', $topic);
         }
 
@@ -102,7 +101,7 @@ class TopicController extends BaseController {
             $topic->save();
         }
         return Redirect::back()
-            ->with('message', Lang::get('page.update_successfully'));
+            ->with('message', Lang::get('app.update_successfully'));
     }
 
     public function destroy($id)
@@ -159,15 +158,6 @@ class TopicController extends BaseController {
     private function liked($id)
     {
         return Redis::sismember('topic:' . $id . ':likes', Auth::user()->id);
-    }
-
-    private function isFollowing($user)
-    {
-        $relationship = Relationship::whereFollowed_id($user->id)
-            ->whereFollower_id(Auth::user()->id)
-            ->first();
-
-        return $relationship ? true : false;
     }
 
 }

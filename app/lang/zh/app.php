@@ -66,4 +66,6 @@ return array(
 
     'not_found'                    => '找不到该页面',
 
+    'current_password_incorrect'   => '当前密码不正确',
+
 );
