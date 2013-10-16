@@ -70,6 +70,8 @@ Route::get('u/{username}/replies', array('uses'=>'UserController@show'));
 
 Route::post('reply/store', array('uses'=>'ReplyController@store'));
 
+Route::get('reply/{id}', array('uses'=>'ReplyController@edit'));
+
 Route::post('user/follow', array('uses'=>'RelationshipController@toggle'));
 
 Route::post('user/unfollow', array('uses'=>'RelationshipController@toggle'));

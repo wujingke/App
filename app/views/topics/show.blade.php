@@ -55,8 +55,16 @@
 		<span class="meta"> {{ Lang::get('app.said') }}</span>
 		<span class="timeago meta" date-time="{{ $reply->created_at }}"></span>
 		<span class="meta pull_right trigger-content"><i class="icon-reply"></i></span>
-
-		<div>{{ $reply->content_html }}</div>
+		@if (Auth::check() && (Auth::user()->id == $reply->user->id))
+		<span class="pull_right edit-reply">
+			<a href="">{{ Lang::get('app.edit') }}</a>
+		</span>
+		<div class="field ry-textarea" data-url="{{ URL::to('reply/' . $reply->id) }}">
+			<textarea class="textarea input" rows="3"></textarea>
+			<button>{{ Lang::get('user.save') }}</button>
+		</div>
+		@endif
+		<div class="ry">{{ $reply->content_html }}</div>
 	</li>
 	@endforeach
 

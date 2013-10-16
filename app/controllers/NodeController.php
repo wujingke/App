@@ -7,7 +7,7 @@ class NodeController extends BaseController {
 		$node = Node::where('pretty', '=', $pretty)->first();
 
 		if ($node) {
-			$topics = Topic::where('node_id', '=', $node->id)->paginate(2);
+			$topics = Topic::where('node_id', '=', $node->id)->paginate(12);
 			return View::make('nodes.index')
 				->with('nodes', Node::all())
 				->with('topics', $topics);	

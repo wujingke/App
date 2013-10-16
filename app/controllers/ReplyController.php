@@ -9,6 +9,23 @@ class ReplyController extends BaseController {
         $this->beforeFilter('csrf', array('on'=>'post'));
     }
 
+    public function edit($id)
+    {
+        if (Request::ajax()) {
+            $reply = Reply::find($id);
+            return $reply
+                ? Response::json(array('content'=>$reply->content, 'success'=>true))
+                : Response::json(array('success'=>false));
+        }
+
+        return App::abort(404, 'Page not found');
+    }
+
+    public function update()
+    {
+
+    }
+
     public function store()
     {
         $v = Reply::validate(Input::all());
