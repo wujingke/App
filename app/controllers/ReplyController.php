@@ -27,7 +27,7 @@ class ReplyController extends BaseController {
 
         $content = (Input::has('content') && (Input::get('content') != ''))
             ? Input::get('content')
-            : '> ';
+            : '<p class="trash">' . Lang::get('app.reply_trashed') . '</p>';
 
         $content_html = Clean::htmlawed(Reply::markdown($content));
 

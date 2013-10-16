@@ -68,4 +68,6 @@ return array(
 
     'current_password_incorrect'   => '当前密码不正确',
 
+    'reply_trashed'                => '此处内容已被该用户删除',
+
 );
