@@ -40,6 +40,8 @@ Route::get('node/{pretty}', array('uses'=>'NodeController@index'))->where('name'
 
 Route::get('notification', array('uses'=>'NotificationController@index'));
 
+Route::put('notification/{id}', array('uses'=>'NotificationController@mark'));
+
 Route::get('t/{id}', array('as'=>'topic', 'uses'=>'TopicController@show'))->where('id', '[0-9]+');
 
 Route::get('topic/create', array('uses'=>'TopicController@create'));

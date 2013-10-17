@@ -9,7 +9,8 @@ class Notification extends Eloquent {
 
     public function scopeNewest($query)
     {
-        return $query->where('user_id', '=', Auth::user()->id)
+        return $query->whereUser_id(Auth::user()->id)
+            ->whereUnread(true)
             ->orderBy('created_at', 'DESC')
             ->take(20);
     }
