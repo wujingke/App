@@ -139,7 +139,7 @@ class UserController extends BaseController {
 	{
 		$avatarFile = Input::file('avatar');
 
-		$v = Validator::make(array('avatar'=>$avatarFile), array('avatar'=>'mimes:png'));
+		$v = Validator::make(array('avatar'=>$avatarFile), array('avatar'=>'mimes:png,jpeg'));
 
 		if ($v->fails()) {
 			return Redirect::back()
@@ -203,7 +203,11 @@ class UserController extends BaseController {
 
 		$output = 'avatars/' . sha1(str_random(32)) . '.png';
 
-		imagecopyresampled($avatar, imagecreatefrompng($src), 0, 0, $position['x'], $position['y'], $size, $size, $position['w'], $position['h']);
+		if (File::extension($src) == 'png') {
+			imagecopyresampled($avatar, imagecreatefrompng($src), 0, 0, $position['x'], $position['y'], $size, $size, $position['w'], $position['h']);
+		}
+
+		imagecopyresampled($avatar, imagecreatefromjpeg($src), 0, 0, $position['x'], $position['y'], $size, $size, $position['w'], $position['h']);
 
 		return imagepng($avatar, public_path() . '/' . $output) ? $output : false;
 	}
