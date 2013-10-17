@@ -65,6 +65,14 @@
 
 	<div class="nice-box">
 
+        <div class="tips">
+
+            <blockquote>
+                <p>{{ Lang::get('tip.create_topic') }}</p>
+            </blockquote>
+
+        </div>
+
 	</div>
 
 @stop

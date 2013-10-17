@@ -70,4 +70,6 @@ return array(
 
     'reply_trashed'                => '此处内容已被该用户删除',
 
+    'no_notify'                    => '没有未读通知',
+
 );
