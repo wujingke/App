@@ -76,4 +76,8 @@ return array(
 
     'uploading'                    => '上传中，请等待！',
 
+    'no_followers'                 => '还没有跟随者',
+
+    'no_following'                 => '还没关注任何人',
+
 );

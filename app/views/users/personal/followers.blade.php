@@ -4,7 +4,9 @@
 
 <div class="nice-notice">
 
-
+    @unless ($user->followers->count())
+        <p>{{ Lang::get('app.no_followers') }}</p>
+    @endunless
 
 </div>
 
