@@ -72,4 +72,8 @@ return array(
 
     'no_notify'                    => '没有未读通知',
 
+    'uploader'                     => '上传图片',
+
+    'uploading'                    => '上传中，请等待！',
+
 );

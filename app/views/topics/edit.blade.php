@@ -49,6 +49,10 @@
 
 <div class="nice-box">
 
+	@include('uploader._form')
+
+	@include('uploader._script')
+
 </div>
 
 @stop

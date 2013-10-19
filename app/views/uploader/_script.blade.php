@@ -16,14 +16,20 @@
 
             done: function (e, data) {
 
-                //$('.notice').text('=> ' + data.result.hash);
+                $('#uploader-notice>span').text('{{ Lang::get('app.uploader') }}');
+
+                var originText = $('textarea').val();
+
+                var pLink = '![](http://ampou.u.qiniudn.com/' + data.result.hash + ')\n';
+
+                $('textarea').val(originText + pLink);
             }
 
         }).on('fileuploadsubmit', function (e, data) {
 
             data.formData = $('form#fileupload').serializeArray();
 
-            //$('.notice').text('Uploading..');
+            $('#uploader-notice>span').text('{{ Lang::get('app.uploading') }}');
 
         });
 
