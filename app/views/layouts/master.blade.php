@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title></title>
-	{{ HTML::style('http://me:9292/assets/application.css') }}
-	{{ HTML::script('http://me:9292/assets/application.js') }}
+	{{ HTML::style('assets/application.css') }}
+	{{ HTML::script('assets/application.js') }}
 </head>
 <body>
 	<div class="wrapper">

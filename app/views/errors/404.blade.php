@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{{ Lang::get('page.not_found') }}</title>
+    <title>{{ Lang::get('app.not_found') }}</title>
     <style>
         @charset "UTF-8";
 
@@ -41,7 +41,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <img src="http://me:9292/assets/404.png">
+        {{ HTML::image('assets/404.png') }}
         <p class="_404">404</p>
         <p class="not_found">Sorry this page can not be found.</p>
     </div>
