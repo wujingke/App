@@ -2,7 +2,7 @@
 
     <ul class="info">
 
-        <li>{{ $topic->user->profile->nickname }}@{{ $topic->user->username }}</li>
+        <li>{{ $topic->user->profile->nickname }}<span>@</span>{{ $topic->user->username }}</li>
 
         <li>{{ $topic->user->profile->location }}</li>
 
