@@ -204,10 +204,14 @@ class UserController extends BaseController {
 		$output = 'avatars/' . sha1(str_random(32)) . '.png';
 
 		if (File::extension($src) == 'png') {
-			imagecopyresampled($avatar, imagecreatefrompng($src), 0, 0, $position['x'], $position['y'], $size, $size, $position['w'], $position['h']);
-		}
 
-		imagecopyresampled($avatar, imagecreatefromjpeg($src), 0, 0, $position['x'], $position['y'], $size, $size, $position['w'], $position['h']);
+			imagecopyresampled($avatar, imagecreatefrompng($src), 0, 0, $position['x'], $position['y'], $size, $size, $position['w'], $position['h']);
+
+		} else {
+
+			imagecopyresampled($avatar, imagecreatefromjpeg($src), 0, 0, $position['x'], $position['y'], $size, $size, $position['w'], $position['h']);
+
+		}
 
 		return imagepng($avatar, public_path() . '/' . $output) ? $output : false;
 	}
