@@ -1,5 +1,6 @@
 /bootstrap/compiled.php
 /app/config/database.php
+/app/config/mail.php
 /app/config/app.yml
 /app/database/*.sqlite
 composer.phar
