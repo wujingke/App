@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+require 'sprockets'
+require 'yui/compressor'
+
+env = Sprockets::Environment.new
+
+env.append_path 'assets/javascripts'
+env.append_path 'assets/stylesheets'
+
+cr_js = YUI::JavaScriptCompressor.new
+cr_css = YUI::CssCompressor.new
+
+min_js = cr_js.compress(env['application.js'].to_s)
+min_css = cr_css.compress(env['application.css'].to_s)
+
+File.write('public/assets/application.js', min_js)
+File.write('public/assets/application.css', min_css)
