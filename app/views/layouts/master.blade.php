@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Fix titles</title>
+	<title></title>
 	{{ HTML::style('assets/application.css') }}
 	{{ HTML::script('assets/application.js') }}
 </head>
