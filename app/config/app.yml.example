@@ -4,6 +4,12 @@ defaults: &defaults
     - 'master@gmail.com'
     - 'member@gmail.com'
 
+  assets_url: ''
+
+  qiniu:
+    scope: ''
+    ak: ''
+    sk: ''
 
 development:
   <<: *defaults

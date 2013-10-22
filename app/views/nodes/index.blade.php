@@ -11,7 +11,7 @@
         <div class="topic-meta">
             <a href="{{ URL::to('u/' . $topic->user->username) }}">{{ $topic->user->username }}</a>
             <span>{{ Lang::get('app.slash') }}</span>
-            <a href="{{ URL::route('topic', $topic->id + 2013) }}">{{ Lang::get('app.discuss') }}(19)</a>
+            <a href="{{ URL::route('topic', $topic->id + 2013) }}">{{ Lang::get('app.discuss') }}({{ $topic->replies->count() }})</a>
             <span>{{ Lang::get('app.slash') }}</span>
             <span class="timeago" date-time="{{ $topic->created_at }}"></span>
         </div>

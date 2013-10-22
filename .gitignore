@@ -1,6 +1,7 @@
 /bootstrap/compiled.php
-/app/database/*.sqlite
+/app/config/database.php
 /app/config/app.yml
+/app/database/*.sqlite
 composer.phar
 composer.lock
 .DS_Store

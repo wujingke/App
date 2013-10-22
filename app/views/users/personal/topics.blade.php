@@ -12,7 +12,7 @@
             
             @include('sections.owner')
 
-            <a href="{{ URL::route('topic', $topic->id + 2013) }}">{{ Lang::get('app.discuss') }}(19)</a>
+            <a href="{{ URL::route('topic', $topic->id + 2013) }}">{{ Lang::get('app.discuss') }}({{ $topic->replies->count() }})</a>
 
             <span>{{ Lang::get('app.slash') }}</span>
             <a href="{{ URL::to('node/' . $topic->node->pretty) }}">{{ $topic->node->name }}</a>

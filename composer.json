@@ -7,6 +7,7 @@
 		"laravel/framework": "4.0.*",
 		"michelf/php-markdown": "1.3.*@dev",
 		"fitztrev/laravel-html-minify": "dev-master",
+		"schickling/backup": "dev-master",
 		"symfony/yaml": "2.4.*@dev",
 		"matteo/clean": "1.0.*@dev"
 	},

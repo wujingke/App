@@ -12,7 +12,7 @@
 
 	<span><i class="icon-bookmark"></i></span>
 	{{{ $topic->title }}}
-
+	
 	@if (Auth::check() && Auth::user()->staff)
 	<span class="pull_right action-frozen {{ $topic->frozen ? 'actived' : 'nil' }}" data-url="{{ URL::to('topic/' . $topic->id . '/frozen') }}">
 		<i class="icon-lock"></i>
